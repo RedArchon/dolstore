@@ -44,146 +44,17 @@
                     <div><button class="px-8 py-6 text-gray-100 rounded-lg bounce gradient hover:shadow-lg">Sign up to
                             shop</button></div>
                 </div>
-                <div class="-mt-64 relative" style="z-index: -1;">
-                    <svg viewBox="0 0 1428 174" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                            <g transform="translate(-2.000000, 44.000000)" fill="#FFFFFF" fill-rule="nonzero">
-                                <path
-                                    d="M0,0 C90.7283404,0.927527913 147.912752,27.187927 291.910178,59.9119003 C387.908462,81.7278826 543.605069,89.334785 759,82.7326078 C469.336065,156.254352 216.336065,153.6679 0,74.9732496"
-                                    opacity="0.100000001"></path>
-                                <path
-                                    d="M100,104.708498 C277.413333,72.2345949 426.147877,52.5246657 546.203633,45.5787101 C666.259389,38.6327546 810.524845,41.7979068 979,55.0741668 C931.069965,56.122511 810.303266,74.8455141 616.699903,111.243176 C423.096539,147.640838 250.863238,145.462612 100,104.708498 Z"
-                                    opacity="0.100000001"></path>
-                                <path
-                                    d="M1046,51.6521276 C1130.83045,29.328812 1279.08318,17.607883 1439,40.1656806 L1439,120 C1271.17211,77.9435312 1140.17211,55.1609071 1046,51.6521276 Z"
-                                    id="Path-4" opacity="0.200000003"></path>
-                            </g>
-                            <g transform="translate(-4.000000, 76.000000)" fill="#FFFFFF" fill-rule="nonzero">
-                                <path
-                                    d="M0.457,34.035 C57.086,53.198 98.208,65.809 123.822,71.865 C181.454,85.495 234.295,90.29 272.033,93.459 C311.355,96.759 396.635,95.801 461.025,91.663 C486.76,90.01 518.727,86.372 556.926,80.752 C595.747,74.596 622.372,70.008 636.799,66.991 C663.913,61.324 712.501,49.503 727.605,46.128 C780.47,34.317 818.839,22.532 856.324,15.904 C922.689,4.169 955.676,2.522 1011.185,0.432 C1060.705,1.477 1097.39,3.129 1121.236,5.387 C1161.703,9.219 1208.621,17.821 1235.4,22.304 C1285.855,30.748 1354.351,47.432 1440.886,72.354 L1441.191,104.352 L1.121,104.031 L0.457,34.035 Z">
-                                </path>
-                            </g>
-                        </g>
+                <div class="-mt-12 relative" style="z-index: -1;">
+                    <svg class="-mb-1" viewBox="0 0 1695 57" preserveAspectRatio="none">
+                        <path
+                            d="M0 23c135.4 19 289.6 28.5 462.5 28.5C721.9 51.5 936.7 1 1212.2 1 1395.8.9 1556.7 8.3 1695 23v34H0V23z"
+                            fill="rgba(255,255,255,1)" fill-rule="evenodd"></path>
                     </svg>
                 </div>
             </div>
         </header>
         <!-- start products container wrapper -->
         <div class="flex mt-64 xl:mt-40 w-5/6 mx-auto" id="products">
-
-
-            {{-- <!-- start products filter box -->
-            <div class="flex flex-col justify-start shadow-xl p-6 rounded-lg w-64 h-full sticky top-0">
-                <span class="text-xl text-gray-900 font-thin tracking-widest">Filter Products</span>
-                <div class="my-6">
-                    <div
-                        class="flex justify-between items-center text-xl text-gray-900 font-thin tracking-widest border-b-2 border-gray-300">
-                        <span>Category</span> <i class="fas fa-angle-down"></i></div>
-                    <div>
-                        <input type="checkbox" id="filter-mens" name="mens" value="mens">
-                        <label for="filter-mens">Men's Outerwear</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="filter-womens" name="womens" value="womens">
-                        <label for="filter-womens">Women's Outerwear</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="filter-hats" name="hats" value="hats">
-                        <label for="filter-hats">Hats</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="filter-home-office" name="home-office" value="home-office">
-                        <label for="filter-womens">Home and Office</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="filter-recognition" name="recognition" value="recognition">
-                        <label for="filter-recognition">Recognition</label>
-                    </div>
-                </div>
-                <div class="my-6">
-                    <div
-                        class="flex justify-between items-center text-xl text-gray-900 font-thin tracking-widest border-b-2 border-gray-300">
-                        <span>Size</span> <i class="fas fa-angle-down"></i></div>
-                    <div>
-                        <input type="checkbox" id="filter-xs" name="xs" value="xs">
-                        <label for="filter-xs">Extra Small</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="filter-sm" name="sm" value="sm">
-                        <label for="filter-sm">Small</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="filter-md" name="md" value="md">
-                        <label for="filter-md">Medium</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="filter-lg" name="lg" value="lg">
-                        <label for="filter-lg">Large</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="filter-xl" name="xl" value="xl">
-                        <label for="filter-xl">Extra Large</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="filter-xl" name="xl" value="xl">
-                        <label for="filter-xl">2XL</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="filter-xl" name="xl" value="xl">
-                        <label for="filter-xl">3XL</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="filter-xl" name="xl" value="xl">
-                        <label for="filter-xl">4XL</label>
-                    </div>
-                </div>
-                <div class="my-6">
-                    <div
-                        class="flex justify-between items-center text-xl text-gray-900 font-thin tracking-widest border-b-2 border-gray-300">
-                        <span>Color</span> <i class="fas fa-angle-down"></i></div>
-                    <div class="flex flex-wrap mt-4">
-                        <button class="rounded-full bg-green-200 h-10 w-10 flex items-center justify-center m-2"
-                            id="filter-mens" name="mens" value=""></button>
-                        <button class="rounded-full bg-blue-200 h-10 w-10 flex items-center justify-center m-2"
-                            id="filter-mens" name="mens" value=""></button>
-                        <button class="rounded-full bg-indigo-200 h-10 w-10 flex items-center justify-center m-2"
-                            id="filter-mens" name="mens" value=""></button>
-                        <button class="rounded-full bg-orange-200 h-10 w-10 flex items-center justify-center m-2"
-                            id="filter-mens" name="mens" value=""></button>
-                        <button class="rounded-full bg-red-200 h-10 w-10 flex items-center justify-center m-2"
-                            id="filter-mens" name="mens" value=""></button>
-                        <button class="rounded-full bg-gray-200 h-10 w-10 flex items-center justify-center m-2"
-                            id="filter-mens" name="mens" value=""></button>
-                        <button class="rounded-full bg-yellow-400 h-10 w-10 flex items-center justify-center m-2"
-                            id="filter-mens" name="mens" value=""></button>
-                        <button class="rounded-full bg-green-500 h-10 w-10 flex items-center justify-center m-2"
-                            id="filter-mens" name="mens" value=""></button>
-                        <button class="rounded-full bg-blue-500 h-10 w-10 flex items-center justify-center m-2"
-                            id="filter-mens" name="mens" value=""></button>
-                        <button class="rounded-full bg-indigo-500 h-10 w-10 flex items-center justify-center m-2"
-                            id="filter-mens" name="mens" value=""></button>
-                        <button class="rounded-full bg-orange-500 h-10 w-10 flex items-center justify-center m-2"
-                            id="filter-mens" name="mens" value=""></button>
-                        <button class="rounded-full bg-red-500 h-10 w-10 flex items-center justify-center m-2"
-                            id="filter-mens" name="mens" value=""></button>
-                        <button class="rounded-full bg-purple-500 h-10 w-10 flex items-center justify-center m-2"
-                            id="filter-mens" name="mens" value=""></button>
-                        <button class="rounded-full bg-teal-500 h-10 w-10 flex items-center justify-center m-2"
-                            id="filter-mens" name="mens" value=""></button>
-                        <button class="rounded-full bg-pink-500 h-10 w-10 flex items-center justify-center m-2"
-                            id="filter-mens" name="mens" value=""></button>
-                        <button class="rounded-full bg-gray-400 h-10 w-10 flex items-center justify-center m-2"
-                            id="filter-mens" name="mens" value=""></button>
-                        <button class="rounded-full bg-gray-600 h-10 w-10 flex items-center justify-center m-2"
-                            id="filter-mens" name="mens" value=""></button>
-                        <button class="rounded-full bg-gray-800 h-10 w-10 flex items-center justify-center m-2"
-                            id="filter-mens" name="mens" value=""></button>
-                    </div>
-                </div>
-
-            </div> --}}
-            <!-- end products filter box -->
 
             <!-- start product card container -->
             <div class="flex flex-wrap justify-around w-full md:ml-10 relative">
@@ -250,7 +121,7 @@
             <section class="h-full overflow-hidden flex items-start justify-center">
                 <div>
                     <div class="container max-w-full mx-auto py-24 px-6">
-                        <h1 class="text-center text-4xl text-black leading-snug tracking-wider">
+                        <h1 class="text-center text-4xl text-gray-900 font-thin leading-snug tracking-wide">
                             Don't need merch? Donate instead.
                         </h1>
                         <p class="text-center text-lg text-gray-700 mt-2 px-6">
