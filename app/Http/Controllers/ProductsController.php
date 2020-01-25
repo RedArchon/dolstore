@@ -14,7 +14,11 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        //
+        $products = Product::where('published', 1)->get();
+
+        return view('products.index', [
+            'products' => $products
+        ]);
     }
 
     /**
@@ -46,7 +50,7 @@ class ProductsController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        return view('products.show', compact('product'));
     }
 
     /**

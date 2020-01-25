@@ -12,3 +12,11 @@
 */
 
 Route::get('/', 'WebController@index');
+
+Route::get('/products', 'ProductsController@index');
+Route::get('/products/create', 'ProductsController@create');
+Route::get('/products/{product}', 'ProductsController@show');
+Route::post('/products', 'ProductsController@store');
+Route::post('/products/{product}/edit', 'ProductsController@edit');
+Route::put('/products/{product}', 'ProductsController@update');
+Route::delete('/products/{product}', 'ProductsController@destroy');

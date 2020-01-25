@@ -27,10 +27,105 @@
             background-size: cover;
         }
     </style>
+    @yield('style')
 </head>
 
 <body>
-    @yield('content')
+    @yield('warning')
+
+    <header class="gradient relative z-0">
+        <div class="flex flex-col justify-between relative"
+            <?= request()->getRequestUri() === "/" ? 'style="min-height:500px;"' : 'style="height:55px"'?>>
+            <nav class="container mx-auto mb-8">
+                <div class="flex justify-between items-center my-2">
+                    <a href="/">
+                        <div class="flex items-center"><span class="text-2xl text-gray-100 inline"><i
+                                    class="fas fa-store-alt text-white align-middle"></i></span><span
+                                class="text-2xl text-gray-100 tracking-wider font-semibold ml-2"> DOL</span> <span
+                                class="text-2xl text-gray-100 tracking-tight font-light ml-2">Logo Store</span></div>
+                    </a>
+                    <div>
+                        <button
+                            class="text-xl text-gray-100 tracking-wider font-thin border-b-2 border-transparent hover:border-gray-100 ml-3">Login
+                            <i class="fas fa-sign-in-alt"></i></button>
+                    </div>
+                </div>
+            </nav>
+            @yield('hero')
+        </div>
+    </header>
+
+    <div>
+
+        @yield('content')
+
+        <footer class="sm:overflow-hidden sm:flex items-center justify-center gradient">
+            <div class="container p-8 sm:my-16">
+                <div class="sm:flex mb-4">
+                    <div class="sm:w-1/4 h-auto">
+                        <div class="text-orange-500 mb-2">Information</div>
+                        <ul class="list-reset leading-normal">
+                            <li class="hover:text-orange-400 text-gray-100">One</li>
+                            <li class="hover:text-orange-400 text-gray-100">Two</li>
+                            <li class="hover:text-orange-400 text-gray-100">Three</li>
+                            <li class="hover:text-orange-400 text-gray-100">Four</li>
+                            <li class="hover:text-orange-400 text-gray-100">Five</li>
+                            <li class="hover:text-orange-400 text-gray-100">Six</li>
+                            <li class="hover:text-orange-400 text-gray-100">Seven</li>
+                            <li class="hover:text-orange-400 text-gray-100">Eight</li>
+                        </ul>
+                    </div>
+                    <div class="sm:w-1/4 h-auto sm:mt-0 mt-8">
+                        <div class="text-blue-600 mb-2">Blue</div>
+                        <ul class="list-reset leading-normal">
+                            <li class="hover:text-blue-600 text-gray-100">One</li>
+                            <li class="hover:text-blue-600 text-gray-100">Two</li>
+                            <li class="hover:text-blue-600 text-gray-100">Three</li>
+                        </ul>
+
+                        <div class="text-blue-300 mb-2 mt-4">Blue-light</div>
+                        <ul class="list-reset leading-normal">
+                            <li class="hover:text-blue-300 text-gray-100">One</li>
+                            <li class="hover:text-blue-300 text-gray-100">Two</li>
+                            <li class="hover:text-blue-300 text-gray-100">Three</li>
+                        </ul>
+                    </div>
+                    <div class="sm:w-1/4 h-auto sm:mt-0 mt-8">
+                        <div class="text-green-600 mb-2">Green-dark</div>
+                        <ul class="list-reset leading-normal">
+                            <li class="hover:text-green-600 text-gray-100">One</li>
+                            <li class="hover:text-green-600 text-gray-100">Two</li>
+                            <li class="hover:text-green-600 text-gray-100">Three</li>
+                        </ul>
+
+                        <div class="text-green-300 mb-2 mt-4">Green-light</div>
+                        <ul class="list-reset leading-normal">
+                            <li class="hover:text-green-300 text-gray-100">One</li>
+                            <li class="hover:text-green-300 text-gray-100">Two</li>
+                            <li class="hover:text-green-300 text-gray-100">Three</li>
+                        </ul>
+                    </div>
+                    <div class="sm:w-1/2 sm:mt-0 mt-8 h-auto">
+                        <div class="text-red-400 mb-2">Newsletter</div>
+                        <p class="text-gray-100 leading-normal">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi,
+                            consectetur.
+                        </p>
+                        <div class="mt-4 flex">
+                            <input type="text"
+                                class="p-2 border border-grey-light round text-grey-dark text-sm h-auto focus:outline-none"
+                                placeholder="Your email address" />
+                            <button class="bg-orange-400 text-white rounded-sm h-auto text-xs p-3">
+                                Subscribe
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-16 text-gray-100">Designed and Coded with <span
+                        class="text-red-700">&#10084;</span> in Olympia, WA</div>
+            </div>
+        </footer>
+    </div>
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 
