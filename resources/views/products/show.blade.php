@@ -56,7 +56,7 @@
                             hidden="" checked="checked">
                         <div class="carousel-item absolute opacity-0" style="height:50vh;">
                             <div class="block h-full w-full bg-indigo-500 text-white text-5xl text-center"
-                                style="background-image: url('https://picsum.photos/500/500');background-size:cover;">
+                                style="background-image: url('https://picsum.photos/id/{{ rand(1,900) }}/500/500');background-size:cover;">
                                 Slide 1</div>
                         </div>
                         <label for="carousel-3"
@@ -69,7 +69,7 @@
                             hidden="">
                         <div class="carousel-item absolute opacity-0" style="height:50vh;">
                             <div class="block h-full w-full bg-orange-500 text-white text-5xl text-center"
-                                style="background-image: url('https://picsum.photos/500/500');background-size:cover;">
+                                style="background-image: url('https://picsum.photos/id/{{ rand(1,900) }}/500/500');background-size:cover;">
                                 Slide 2</div>
                         </div>
                         <label for="carousel-1"
@@ -82,7 +82,7 @@
                             hidden="">
                         <div class="carousel-item absolute opacity-0" style="height:50vh;">
                             <div class="block h-full w-full bg-green-500 text-white text-5xl text-center"
-                                style="background-image: url('https://picsum.photos/500/500');background-size:cover;">
+                                style="background-image: url('https://picsum.photos/id/{{ rand(1,900) }}/500/500');background-size:cover;">
                                 Slide 3</div>
                         </div>
                         <label for="carousel-2"

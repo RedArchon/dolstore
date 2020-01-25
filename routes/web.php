@@ -13,6 +13,12 @@
 
 Route::get('/', 'WebController@index');
 
+Route::get('/admin', 'AdminController@index');
+Route::get('/admin/products', 'AdminController@products');
+Route::get('/admin/products/{product}', 'AdminController@product');
+Route::get('/admin/users', 'AdminController@users');
+Route::get('/admin/orders', 'AdminController@orders');
+
 Route::get('/products', 'ProductsController@index');
 Route::get('/products/create', 'ProductsController@create');
 Route::get('/products/{product}', 'ProductsController@show');

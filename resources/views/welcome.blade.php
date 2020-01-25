@@ -45,7 +45,7 @@
 
 <div class="flex justify-center mx-auto w-1/3 mt-10">
     <a href="/products"><button
-            class="block border-2 border-blue-700 px-8 py-4 transition hover:bg-blue-700 hover:text-white">
+            class="block border-2 border-teal-900 px-8 py-4 transition hover:bg-teal-900 hover:text-white">
             View All
             Products</button></a>
 </div>

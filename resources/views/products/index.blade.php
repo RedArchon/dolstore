@@ -125,7 +125,8 @@
         <a href="/products/{{ $product->id }}">
             <div class="card flex flex-col justify-start rounded ml-3 mt-3" id="{{ $product->id }}"
                 style="max-width:320px;">
-                <div class="card-img"><img class="rounded-t grow" src="https://picsum.photos/320/320" alt=""></div>
+                <div class="card-img"><img class="rounded-t grow"
+                        src="https://picsum.photos/id/{{ $product->id }}/320/320" alt=""></div>
                 <div class="flex justify-between items-center p-2">
                     <h3 class="card-title text-xl font-thin tracking-wider text-gray-900">
                         {{ substr($product->name, 0, 20) }}...</h3>

@@ -45,6 +45,13 @@
                                 class="text-2xl text-gray-100 tracking-tight font-light ml-2">Logo Store</span></div>
                     </a>
                     <div>
+
+                        <a class="text-lg text-gray-100 mx-2 font-thin hover:underline" href=""><i
+                                class="fas fa-shopping-cart"></i></a>
+                        <a class="text-lg text-gray-100 mx-2 font-thin hover:underline" href="">Store</a>
+                        <a class="text-lg text-gray-100 mx-2 font-thin hover:underline" href="">About</a>
+                        <a class="text-lg text-gray-100 mx-2 font-thin hover:underline" href="">Contract</a>
+
                         <button
                             class="text-xl text-gray-100 tracking-wider font-thin border-b-2 border-transparent hover:border-gray-100 ml-3">Login
                             <i class="fas fa-sign-in-alt"></i></button>
