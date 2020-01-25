@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('name')
+@section('style')
 <style>
     .carousel-open:checked+.carousel-item {
         position: static;
@@ -42,20 +42,22 @@
 @section('content')
 <div class="bg-gray-100">
     <div class="container mx-auto w-full pt-4">
-        <div>
+        <div class="mb-2">
             {{-- breadcrumb --}}
             HOME / MENS / SHIRTS
         </div>
         <div class="flex pb-10">
             <div class="w-1/2">
                 {{-- image carousel / lightbox --}}
-                <div class="carousel relative shadow-2xl bg-white min-h-full">
+                <div class="carousel relative min-h-full px-4">
                     <div class="carousel-inner relative overflow-hidden w-full">
                         <!--Slide 1-->
                         <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true"
                             hidden="" checked="checked">
                         <div class="carousel-item absolute opacity-0" style="height:50vh;">
-                            <div class="block h-full w-full bg-indigo-500 text-white text-5xl text-center">Slide 1</div>
+                            <div class="block h-full w-full bg-indigo-500 text-white text-5xl text-center"
+                                style="background-image: url('https://picsum.photos/500/500');background-size:cover;">
+                                Slide 1</div>
                         </div>
                         <label for="carousel-3"
                             class="prev control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
@@ -66,7 +68,9 @@
                         <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true"
                             hidden="">
                         <div class="carousel-item absolute opacity-0" style="height:50vh;">
-                            <div class="block h-full w-full bg-orange-500 text-white text-5xl text-center">Slide 2</div>
+                            <div class="block h-full w-full bg-orange-500 text-white text-5xl text-center"
+                                style="background-image: url('https://picsum.photos/500/500');background-size:cover;">
+                                Slide 2</div>
                         </div>
                         <label for="carousel-1"
                             class="prev control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
@@ -77,7 +81,9 @@
                         <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true"
                             hidden="">
                         <div class="carousel-item absolute opacity-0" style="height:50vh;">
-                            <div class="block h-full w-full bg-green-500 text-white text-5xl text-center">Slide 3</div>
+                            <div class="block h-full w-full bg-green-500 text-white text-5xl text-center"
+                                style="background-image: url('https://picsum.photos/500/500');background-size:cover;">
+                                Slide 3</div>
                         </div>
                         <label for="carousel-2"
                             class="prev control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
