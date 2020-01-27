@@ -17,21 +17,23 @@ class AdminController extends Controller
     public function products()
     {
         $products = Product::all();
-        return view('admin.products', [
+        return view('admin.products.index', [
             'products' => $products
         ]);
-    }
-
-    public function product(Product $product)
-    {
-        return view('admin.product', compact('product'));
     }
 
     public function users()
     {
         $users = User::all();
-        return view('admin.users', [
+        return view('admin.users.index', [
             'users' => $users
         ]);
+    }
+    public function orders()
+    {
+        // $orders = Order::all();
+        // return view('admin.orders.index', [
+        //     'orders' => $orders
+        // ]);
     }
 }

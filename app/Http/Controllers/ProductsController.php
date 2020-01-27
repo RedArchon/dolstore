@@ -28,7 +28,7 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.products.create');
     }
 
     /**
@@ -39,7 +39,12 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Product::create(request()->validate([
+            'name' => ['required', 'min:3'],
+            'description' => ['required', 'min:5'],
+            'price' => ['required', 'min:3']
+        ]));
+        return redirect('/admin/products');
     }
 
     /**
@@ -61,7 +66,7 @@ class ProductsController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        return view('admin.products.edit', compact('product'));
     }
 
     /**
@@ -73,7 +78,12 @@ class ProductsController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        $product->update(request()->validate([
+            'name' => ['required', 'min:3'],
+            'description' => ['required', 'min:5'],
+            'price' => ['required', 'min:3']
+        ]));
+        return redirect('/admin/products');
     }
 
     /**
