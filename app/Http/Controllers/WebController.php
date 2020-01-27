@@ -9,7 +9,9 @@ class WebController extends Controller
 {
     public function index()
     {
-        $featuredProducts =  Product::all()->random(4);
+        if (count(Product::all()) > 0) {
+            $featuredProducts =  Product::all()->random(4);
+        } 
         return view('welcome', [
             'products' => $featuredProducts
         ]);

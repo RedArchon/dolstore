@@ -18,8 +18,8 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->text('description')->nullable();
             $table->float('price', 8, 2);
-            $table->boolean('published');
-            $table->string('image_uri');
+            $table->boolean('published')->default(true);
+            $table->string('image_uri')->nullable();
             $table->timestamps();
         });
     }
