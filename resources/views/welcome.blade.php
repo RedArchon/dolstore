@@ -25,7 +25,7 @@
 
     <!-- start product card container -->
     <div class="flex flex-wrap justify-around w-full md:ml-10 relative">
-
+    @if($products)
         @foreach($products as $product)
         <!-- start product card -->
         <div class="card flex flex-col justify-start rounded ml-3 mt-3" style="max-height:395px;">
@@ -38,6 +38,7 @@
             <span class="text-sm text-gray-600 font-thin tracking-wide">Product Category</span>
         </div>
         @endforeach
+    @endif
 
         <!-- end product card -->
     </div> <!-- End product card container -->
