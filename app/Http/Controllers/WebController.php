@@ -9,13 +9,11 @@ class WebController extends Controller
 {
     public function index()
     {
-        $featuredProducts = Product::all();
-        if (!$featuredProducts->isEmpty()) {
-            $featuredProducts->random(4);
+        if (Product::all()->count() >= 4) {
+            $featuredProducts = Product::all()->random(4);
         } else {
             $featuredProducts = null;
         }
-
         return view('welcome', [
             'products' => $featuredProducts
         ]);
