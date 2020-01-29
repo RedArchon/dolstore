@@ -18,4 +18,8 @@ class WebController extends Controller
             'products' => $featuredProducts
         ]);
     }
+    public function admin()
+    {
+        return view('admin.index');
+    }
 }
