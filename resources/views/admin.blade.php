@@ -48,7 +48,8 @@
 
     </main>
     <footer class="flex justify-center items-center bg-gray-800 h-20 rounded-b">
-        <span class="text-xs text-gray-100">Designed and Coded with <span class="text-red-600">&#10084;</span> in Olympia, WA</span>
+        <span class="text-xs text-gray-100">Designed and Coded with <span class="text-red-600">&#10084;</span> in
+            Olympia, WA</span>
     </footer>
     <script src="{{ asset('js/app.js')}}"></script>
 </body>

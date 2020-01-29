@@ -13,22 +13,28 @@
 
 /*
 |--------------------------------------------------------------------------
-| WebController
+| WebController (for general top-level routes)
 |--------------------------------------------------------------------------
 */
 
 Route::get('/', 'WebController@index');
+Route::get('/admin', 'WebController@admin'); // needs to be gated
+
 
 /*
 |--------------------------------------------------------------------------
-| AdminController
+| UsersController
 |--------------------------------------------------------------------------
 */
 
-Route::get('/admin', 'AdminController@index');
-Route::get('/admin/products', 'AdminController@products');
-Route::get('/admin/users', 'AdminController@users');
-Route::get('/admin/orders', 'AdminController@orders');
+Route::get('/admin/users', 'UsersController@index');
+Route::get('/admin/users/create', 'UsersController@create');
+Route::get('/users/{user}', 'UsersController@show');
+Route::post('admin/users', 'UsersController@store');
+Route::get('/admin/users/{user}/edit', 'UsersController@edit');
+Route::put('/users/{user}', 'UsersController@update');
+Route::delete('/users/{user}', 'UsersController@destroy');
+
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +43,7 @@ Route::get('/admin/orders', 'AdminController@orders');
 */
 
 Route::get('/products', 'ProductsController@index');
+Route::get('/admin/products', 'ProductsController@admin');
 Route::get('/admin/products/create', 'ProductsController@create');
 Route::get('/products/{product}', 'ProductsController@show');
 Route::post('admin/products', 'ProductsController@store');
