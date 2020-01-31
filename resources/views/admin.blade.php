@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <script src="https://kit.fontawesome.com/04fe5eeb23.js" crossorigin="anonymous"></script>
     <title>DOL Store | Admin</title>
+    @yield('head')
 </head>
 
 <body class="container mx-auto shadow-xl">
@@ -24,12 +25,12 @@
 
         <!-- Main Nav Start -->
         <aside class="bg-gray-400 w-1/4">
-            <a href="/admin/users">
+            <a href="{{ route('admin.users') }}">
                 <div class="flex items-center hover:bg-gray-200 h-10 text-gray-900 p-2 hover:shadow-md" id="users-btn">
                     <i class="fas fa-users inline-block text-lg w-12"></i><span
                         class="ml-4 text-lg tracking-wider font-thin">Users</span></div>
             </a>
-            <a href="/admin/products">
+            <a href="{{ route('admin.products') }}">
                 <div class="flex items-center hover:bg-gray-200 hover:shadow-md h-10 text-gray-900 p-2"
                     id="products-btn"><i class="fas fa-tshirt inline-block text-lg w-12"></i><span
                         class="ml-4 text-lg tracking-wider font-thin">Products</span></div>
@@ -52,6 +53,7 @@
             Olympia, WA</span>
     </footer>
     <script src="{{ asset('js/app.js')}}"></script>
+    @yield('foot')
 </body>
 
 </html>

@@ -42,9 +42,14 @@
 @section('content')
 <div class="bg-gray-100">
     <div class="container mx-auto w-full pt-4">
-        <div class="mb-2">
+        <div class="flex justify-between mb-2">
             {{-- breadcrumb --}}
-            HOME / MENS / SHIRTS
+            <span>HOME / MENS / SHIRTS</span>
+            <div>
+                @foreach($product->categories()->pluck('name') as $category)
+                <span class="mx-1 p-1 bg-gray-300 rounded">{{ $category }}</span>
+                @endforeach
+            </div>
         </div>
         <div class="flex pb-10">
             <div class="w-1/2">

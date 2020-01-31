@@ -122,7 +122,7 @@
 
         @foreach($products as $product)
         <!-- start product card -->
-        <a href="/products/{{ $product->id }}">
+        <a href="{{ $product->path() }}">
             <div class="card flex flex-col justify-start rounded ml-3 mt-3" id="{{ $product->id }}"
                 style="max-width:320px;">
                 <div class="card-img"><img class="rounded-t grow"

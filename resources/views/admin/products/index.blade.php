@@ -22,7 +22,7 @@
             <div class="flex justify-between mt-2">
                 <span
                     class="inline px-2 py-1 bg-green-600 rounded-lg text-xs text-gray-100 font-semibold tracking-wide">${{ $product->price }}</span>
-                <a href="/admin/products/{{ $product->id }}/edit"><button
+                <a href="{{ route('products.edit', $product->id) }}"><button
                         class="rounded-lg px-2 py-1 bg-gray-800 text-gray-100 text-xs hover:bg-gray-200 hover:text-gray-900 hover:shadow-md tracking-wide font-semibold"><i
                             class="fas fa-caret-right"></i> Modify</i></button></a>
             </div>

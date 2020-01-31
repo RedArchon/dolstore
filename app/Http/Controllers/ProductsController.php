@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\Category;
 use Illuminate\Http\Request;
 
 class ProductsController extends Controller
@@ -28,7 +29,10 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        return view('admin.products.create');
+        $categories = Category::all();
+        return view('admin.products.create', [
+            'categories' => $categories
+        ]);
     }
 
     /**
@@ -39,11 +43,14 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        Product::create(request()->validate([
+        $product = Product::create(request()->validate([
             'name' => ['required', 'min:3'],
             'description' => ['required', 'min:5'],
-            'price' => ['required', 'min:3']
+            'price' => ['required'],
+            'published' => ['required'],
+            'image_uri' => ['unique:products']
         ]));
+        $product->categories()->attach(request()->categories);
         return redirect('/admin/products');
     }
 
@@ -66,7 +73,11 @@ class ProductsController extends Controller
      */
     public function edit(Product $product)
     {
-        return view('admin.products.edit', compact('product'));
+        $categories = Category::all();
+        return view('admin.products.edit', [
+            'product' => $product,
+            'categories' => $categories
+        ]);
     }
 
     /**
@@ -81,8 +92,20 @@ class ProductsController extends Controller
         $product->update(request()->validate([
             'name' => ['required', 'min:3'],
             'description' => ['required', 'min:5'],
-            'price' => ['required', 'min:3']
+            'price' => ['required'],
+            'published' => ['required'],
+            'image_uri' => ['unique:products']
         ]));
+        foreach (request()->categories as $category) {
+            if (!in_array($category, $product->categories()->pluck('category_id')->toArray())) {
+                $product->categories()->attach($category);
+            }
+        }
+        foreach ($product->categories()->pluck('category_id') as $id) {
+            if (!in_array($id, request()->categories)) {
+                $product->categories()->detach($id);
+            }
+        }
         return redirect('/admin/products');
     }
 
@@ -94,7 +117,9 @@ class ProductsController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        $product->delete();
+
+        return redirect(route('admin.products'));
     }
 
     public function admin()

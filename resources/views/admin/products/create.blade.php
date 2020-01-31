@@ -19,12 +19,13 @@
         </div>
         <div class="flex flex-wrap -mx-3 mb-6">
             <div class="w-full px-3">
-                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                    for="grid-description">
                     Description
                 </label>
                 <textarea
                     class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    id="grid-password" name="description" style="resize:none;"
+                    id="grid-description" name="description" style="resize:none;"
                     placeholder="Product Description"></textarea>
                 <p class="text-gray-600 text-xs italic">Make it as long and as crazy as you'd like</p>
             </div>
@@ -42,14 +43,41 @@
             </div>
         </div>
         <div class="flex flex-wrap -mx-3 mb-2">
+            <div class="w-1/2 px-3 mb-6 md:mb-0">
+                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="categories[]">
+                    Category
+                </label>
+                <div class="flex items-center">
+                    <select class="form-multiselect" name="categories[]" multiple>
+                        @foreach ($categories as $category)
+                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+            <div class="w-1/2 px-3 mb-6 md:mb-0">
+                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="published">
+                    Visibility
+                </label>
+                <div class="flex items-center">
+                    <input
+                        class="form-radio bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight"
+                        name="published" type="radio" value="1"><label class="ml-2 mr-4">Published</label>
+                    <input
+                        class="form-radio bg-gray-200 text-gray-700 border outline-none border-gray-200 rounded py-3 px-4 leading-tight"
+                        name="published" type="radio" value="0" checked><label class="ml-2 mr-4">Unpublished</label>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-wrap -mx-3 mb-2">
             <div class="w-full px-3 mb-6 md:mb-0">
-                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-price">
+                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="image-file">
                     Image File
                 </label>
                 <div class="flex items-center">
                     <input
                         class="appearance-none inline w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                        type="file" name="pic" accept="image/*">
+                        type="file" name="image-file" accept="image/*">
                 </div>
             </div>
         </div>
@@ -60,4 +88,8 @@
         </div>
     </form>
 </div>
+
+@endsection
+@section('foot')
+
 @endsection
