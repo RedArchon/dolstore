@@ -50,3 +50,7 @@ Route::post('admin/products', 'ProductsController@store');
 Route::get('/admin/products/{product}/edit', 'ProductsController@edit')->name('products.edit');
 Route::put('/products/{product}', 'ProductsController@update');
 Route::delete('/products/{product}', 'ProductsController@destroy');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
