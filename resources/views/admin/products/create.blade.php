@@ -48,9 +48,9 @@
                     Category
                 </label>
                 <div class="flex items-center">
-                    <select class="form-multiselect" name="categories[]" multiple>
+                    <select class="form-multiselect bg-gray-200 h-40 w-56" name="categories[]" multiple>
                         @foreach ($categories as $category)
-                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        <option class="p-1 my-1 rounded" value="{{ $category->id }}">{{ $category->name }}</option>
                         @endforeach
                     </select>
                 </div>

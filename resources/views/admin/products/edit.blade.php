@@ -55,7 +55,7 @@
                     Category
                 </label>
                 <div class="flex items-center">
-                    <select class="form-multiselect bg-gray-200 h-40 w-56 appearance-none" name="categories[]" multiple>
+                    <select class="form-multiselect bg-gray-200 h-40 w-56" name="categories[]" multiple>
                         @foreach ($categories as $category)
                         <option class="p-1 my-1 rounded" @if(in_array($category->id,
                             $product->categories()->pluck('category_id')->toArray()))
@@ -74,12 +74,13 @@
                     Visibility
                 </label>
                 <div class="flex items-center">
-                    <input
-                        class="form-radio bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight"
-                        name="published" type="radio" value="1"><label class="ml-2 mr-4">Published</label>
-                    <input
-                        class="form-radio bg-gray-200 text-gray-700 border outline-none border-gray-200 rounded py-3 px-4 leading-tight"
-                        name="published" type="radio" value="0" checked><label class="ml-2 mr-4">Unpublished</label>
+                    <input @if($product->published === 1) checked @endif
+                    class="form-radio bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight"
+                    name="published" type="radio" value="1"><label class="ml-2 mr-4">Published</label>
+                    <input @if($product->published === 0) checked @endif
+                    class="form-radio bg-gray-200 text-gray-700 border outline-none border-gray-200 rounded py-3 px-4
+                    leading-tight"
+                    name="published" type="radio" value="0"><label class="ml-2 mr-4">Unpublished</label>
                 </div>
             </div>
         </div>
@@ -103,7 +104,9 @@
     <form class="w-full max-w-lg flex justify-end" method="POST" action="/products/{{ $product->id }}">
         @csrf
         @method('DELETE')
-        <button class="py-2 px-4 border 2 border-red-700 bg-white text-red hover:text-white hover:bg-red-700 font-thin tracking-wide leading-snug grow" type="submit" onclick="return confirm('Are you sure you want to delete this item?')">Delete
+        <button
+            class="py-2 px-4 border 2 border-red-700 bg-white text-red hover:text-white hover:bg-red-700 font-thin tracking-wide leading-snug grow"
+            type="submit" onclick="return confirm('Are you sure you want to delete this item?')">Delete
             Product</button></form>
 </div>
 
