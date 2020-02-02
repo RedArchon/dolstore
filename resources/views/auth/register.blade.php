@@ -3,7 +3,8 @@
 @section('content')
 <form method="POST" action="{{ route('register') }}">
     @csrf
-    <div class="container mx-auto mt-10 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
+    <div class="container mx-auto mt-10 bg-white shadow-xl rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-10">
+        <h1 class="text-4xl font-thin mb-8">Register</h1>
         <div class="-mx-3 md:flex mb-6">
             <div class="md:w-1/2 px-3 mb-6 md:mb-0">
                 <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
@@ -31,16 +32,26 @@
                 @enderror
             </div>
         </div>
-        <div class="-mx-3 md:flex mb-6">
-            <div class="md:w-full px-3">
+        <div class="-mx-3 md:flex">
+            <div class="md:w-1/2 px-3">
                 <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
                     for="grid-password">
-                    Password
+                    {{ __('Password') }}
                 </label>
                 <input
-                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3"
-                    id="grid-password" name="password" type="password" placeholder="******************">
-                <p class="text-grey-dark text-xs italic">Make it as long and as crazy as you'd like</p>
+                    class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3 @error('password') border-red-500 @enderror"
+                    id="grid-password" name="password" type="password" placeholder="******************" required>
+                @error('password')
+                <p class="text-red-500 text-xs italic">{{ $message }}</p>
+                @enderror
+            </div>
+            <div class="md:w-1/2 px-3">
+                <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
+                    for="grid-password">
+                    {{ __('Confirm Password') }}
+                </label>
+                    <input id="password-confirm" type="password" class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3"
+                                    name="password_confirmation" required autocomplete="new-password" placeholder="******************">
                 @error('password')
                 <p class="text-red-500 text-xs italic">{{ $message }}</p>
                 @enderror
@@ -53,17 +64,20 @@
                 </label>
                 <input
                     class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4"
-                    id="grid-city" type="text" placeholder="Albuquerque">
+                    id="grid-city" type="text" name="city" placeholder="Albuquerque" required>
             </div>
             <div class="md:w-1/2 px-3">
                 <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-state">
-                    Mailstop
+                    State
                 </label>
                 <div class="relative">
-                    <input
-                        class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4"
-                        id="mailstop" type="text" placeholder="48105">
-                    <p class="text-grey-dark text-xs italic">Provide a mailstop to have purchases delivered at work.</p>
+                    <select
+                        class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded"
+                        id="grid-state" name="state" required>
+                        <option>Washington</option>
+                        <option>Oregon</option>
+                        <option>California</option>
+                    </select>
                 </div>
             </div>
             <div class="md:w-1/2 px-3">
@@ -72,91 +86,43 @@
                 </label>
                 <input
                     class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4"
-                    id="grid-zip" type="text" placeholder="90210">
+                    id="grid-zip" type="text" name="zip" placeholder="90210" required>
+            </div>
+        </div>
+        <div class="-mx-3 md:flex mb-2 mt-2">
+            <div class="md:w-1/2 px-3">
+                <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-state">
+                    Mailstop
+                </label>
+                <div class="relative">
+                    <input
+                        class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4"
+                        id="mailstop" type="text" placeholder="48105" name="mailstop">
+                    <p class="text-grey-dark text-xs italic">Provide a mailstop to have purchases delivered at work.</p>
+                </div>
+            </div>
+            <div class="md:w-1/2 px-3 mt-2 flex flex-col items-end">
+                <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-state">
+                    Are you an employee of WA Department of Licensing?
+                </label>
+                <div class="relative">
+                    <input
+                        class="form-checkbox bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mx-4"
+                        id="mailstop" type="radio" name="dol_employee" value="1">Yes
+                    <input
+                        class="form-checkbox bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mx-4"
+                        id="mailstop" type="radio" name="dol_employee" value="0" checked>No
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-end mt-10">
+            <div class="">
+                <button type="submit" class="px-6 py-4 border-2 text-white bg-red-700 bounce">
+                    {{ __('Register') }}
+                </button>
             </div>
         </div>
     </div>
 </form>
-<!-- OLD -->
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
-                                    name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-                                @error('name')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="email"
-                                class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                                    name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password"
-                                class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password"
-                                    class="form-control @error('password') is-invalid @enderror" name="password"
-                                    required autocomplete="new-password">
-
-                                @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm"
-                                class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control"
-                                    name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 @endsection
