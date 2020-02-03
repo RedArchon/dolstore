@@ -57,7 +57,7 @@
                 </div>
             </div>
             <div class="hidden md:block md:w-1/2 rounded-r-lg"
-                style="background: url('https://images.unsplash.com/photo-1515965885361-f1e0095517ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80'); background-size: cover; background-position: center center;">
+                style="background: url('{{ asset('img/oly-mod.jpg') }}'); background-size: cover; background-position: center center;">
             </div>
         </div>
     </div>

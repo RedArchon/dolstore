@@ -25,12 +25,12 @@
 
     <!-- start product card container -->
     <div class="flex flex-wrap justify-around w-full md:ml-10 relative">
-    @if($products)
+        @if($products)
         @foreach($products as $product)
         <!-- start product card -->
         <div class="card flex flex-col justify-start rounded ml-3 mt-3" style="max-height:395px;">
             <a href="/products/{{ $product->id }}"><img class="img-product hover:shadow grow"
-                    src="{{ asset('img/shot' . rand(1,6) . '.jpg') }}" alt="Random picture"></a>
+                    src="{{ asset('img/shot' . rand(7,10) . '.jpg') }}" alt="Random picture"></a>
             <div class="flex justify-between">
                 <h3 class="text-xl text-gray-800 font-thin tracking-wide">{{ $product->name }}</h3>
                 <span class="text-gray-700 font-thin tracking-wide">${{ $product->price}}</span>
@@ -38,7 +38,7 @@
             <span class="text-sm text-gray-600 font-thin tracking-wide">Product Category</span>
         </div>
         @endforeach
-    @endif
+        @endif
 
         <!-- end product card -->
     </div> <!-- End product card container -->

@@ -44,17 +44,54 @@
                                 class="text-2xl text-gray-100 tracking-wider font-semibold ml-2"> DOL</span> <span
                                 class="text-2xl text-gray-100 tracking-tight font-light ml-2">Logo Store</span></div>
                     </a>
-                    <div>
+                    <div class="flex">
 
                         <a class="text-lg text-gray-100 mx-2 font-thin hover:underline" href=""><i
                                 class="fas fa-shopping-cart"></i></a>
                         <a class="text-lg text-gray-100 mx-2 font-thin hover:underline" href="">Store</a>
                         <a class="text-lg text-gray-100 mx-2 font-thin hover:underline" href="">About</a>
                         <a class="text-lg text-gray-100 mx-2 font-thin hover:underline" href="">Contract</a>
+                        <span class="mx-2 text-lg text-gray-100 mx-2 font-thin">|</span>
 
-                        <a href="{{ route('login') }}"><button
+                        {{-- <a href="{{ route('login') }}"><button
                             class="text-xl text-gray-100 tracking-wider font-thin border-b-2 border-transparent hover:border-gray-100 ml-3">Login
-                            <i class="fas fa-sign-in-alt"></i></button></a>
+                            <i class="fas fa-sign-in-alt"></i></button></a> --}}
+                        <ul>
+                            @guest
+                            <div class="flex">
+                                <li class="mx-2">
+                                    <a class="text-lg text-gray-100 mx-2 font-thin hover:underline"
+                                        href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
+                                @if (Route::has('register'))
+                                <li class="mx-2">
+                                    <a class="text-lg text-gray-100 font-thin hover:underline"
+                                        href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            </div>
+                            @endif
+                            @else
+                            <li class="flex mx-2 dropdown text-lg text-gray-100 font-thin">
+                                <a id="navbarDropdown" class="hover:underline mx-2" href="#" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <i class="far fa-user"></i> {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <div class="hover:underline mx-2" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }} <i class="fas fa-sign-out-alt"></i>
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                        style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                            @endguest
+                        </ul>
+
                     </div>
                 </div>
             </nav>
