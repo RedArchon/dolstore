@@ -39,14 +39,13 @@
             <nav class="container mx-auto mb-8">
                 <div class="flex justify-between items-center my-2">
                     <a href="/">
-                        <div class="flex items-center"><span class="text-2xl text-gray-100 inline"><i
-                                    class="fas fa-store-alt text-white align-middle"></i></span><span
-                                class="text-2xl text-gray-100 tracking-wider font-semibold ml-2"> DOL</span> <span
-                                class="text-2xl text-gray-100 tracking-tight font-light ml-2">Logo Store</span></div>
+                        <div class="flex items-center"><span class="text-2xl text-gray-100 inline"></span><span
+                                class="text-2xl text-gray-100 tracking-wider font-bold ml-2"> DOL</span> <span
+                                class="text-2xl text-gray-100 tracking-tight font-thin ml-1">Logo Store</span></div>
                     </a>
                     <div class="flex">
 
-                        <a class="text-lg text-gray-100 mx-2 font-thin hover:underline" href=""><i
+                        <a class="text-lg text-gray-100 mx-2 font-thin hover:underline bounce" href=""><i
                                 class="fas fa-shopping-cart"></i></a>
                         <a class="text-lg text-gray-100 mx-2 font-thin hover:underline" href="">Store</a>
                         <a class="text-lg text-gray-100 mx-2 font-thin hover:underline" href="">About</a>
@@ -61,7 +60,8 @@
                             <div class="flex">
                                 <li class="mx-2">
                                     <a class="text-lg text-gray-100 mx-2 font-thin hover:underline"
-                                        href="{{ route('login') }}">{{ __('Login') }}</a>
+                                        href="{{ route('login') }}">{{ __('Login') }} <i
+                                            class="fas fa-sign-in-alt"></i></a>
                                 </li>
                                 @if (Route::has('register'))
                                 <li class="mx-2">
@@ -72,15 +72,14 @@
                             @endif
                             @else
                             <li class="flex mx-2 dropdown text-lg text-gray-100 font-thin">
-                                <a id="navbarDropdown" class="hover:underline mx-2" href="#" role="button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    <i class="far fa-user"></i> {{ Auth::user()->name }} <span class="caret"></span>
+                                <a class="hover:underline mx-2" href="/home">
+                                    {{ Auth::user()->name }} <i class="far fa-user mx-1"></i>
                                 </a>
 
                                 <div class="hover:underline mx-2" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }} <i class="fas fa-sign-out-alt"></i>
+                                        {{ __('Logout') }} <i class="fas fa-sign-out-alt mx-1"></i>
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST"
