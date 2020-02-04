@@ -17,7 +17,18 @@
     <nav class="flex items-center justify-between rounded-t bg-gray-800 h-12 text-gray-100 p-4 sm:mt-4">
         <span class="inline-block align-middle"><i class="fas fa-store-alt"></i> DOL Store | Admin Panel</span>
         <div class="logout">
-            Logout <i class="fas fa-sign-out-alt"></i>
+            <li class="flex mx-2 dropdown text-lg text-gray-100 font-thin">
+                <div class="hover:underline mx-2">
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }} <i class="fas fa-sign-out-alt mx-1"></i>
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                </div>
+            </li>
         </div>
     </nav>
     <main class="flex w-full">

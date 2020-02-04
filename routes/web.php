@@ -18,7 +18,7 @@
 */
 
 Route::get('/', 'WebController@index');
-Route::get('/admin', 'WebController@admin'); // needs to be gated
+Route::get('/admin', 'WebController@admin')->middleware('auth'); // needs to be gated
 
 
 /*

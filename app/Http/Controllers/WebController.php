@@ -20,6 +20,8 @@ class WebController extends Controller
     }
     public function admin()
     {
+        abort_unless(\App\user::where('id', auth()->id())->get()->pluck('admin')[0] == 1, 403);
+
         return view('admin.index');
     }
 }

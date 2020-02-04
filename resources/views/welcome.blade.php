@@ -32,7 +32,7 @@
             <a href="/products/{{ $product->id }}"><img class="img-product hover:shadow-lg bounce"
                     src="{{ asset('img/shot' . rand(7,10) . '.jpg') }}" alt="Random picture"></a>
             <div class="flex justify-between">
-                <h3 class="text-xl text-gray-800 font-thin tracking-wide">{{ substr($product->name, 0, 40) }}</h3>
+                <h3 class="text-xl text-gray-800 font-thin tracking-wide">{{ substr($product->name, 0, 30) }}</h3>
                 <span class="text-gray-700 font-thin tracking-wide">${{ $product->price}}</span>
             </div>
             <span class="text-sm text-gray-600 font-thin tracking-wide">Product Category</span>
