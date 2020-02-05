@@ -36,24 +36,36 @@
 
         <!-- Main Nav Start -->
         <aside class="bg-gray-400 w-1/4">
-            <a href="{{ route('admin.users') }}">
-                <div class="flex items-center h-10 text-gray-900 p-2 hover:bg-gray-200 hover:shadow-md @if(request()->getRequestUri() === "/admin/users")
-                    bg-gray-200 shadow-md @endif" id="users-btn">
-                    <i class="fas fa-users inline-block text-lg w-12"></i><span
-                        class="ml-4 text-lg tracking-wider font-thin">Users</span></div>
-            </a>
-            <a href="{{ route('admin.products') }}">
-                <div class="flex items-center hover:bg-gray-200 hover:shadow-md h-10 text-gray-900 p-2 @if(request()->getRequestUri() === "/admin/products")
-                    bg-gray-200 shadow-md @endif" id="products-btn"><i
-                        class="fas fa-tshirt inline-block text-lg w-12"></i><span
-                        class="ml-4 text-lg tracking-wider font-thin">Products</span></div>
-            </a>
-            <a href="/admin/orders">
-                <div class="flex items-center hover:bg-gray-200 h-10 text-gray-900 p-2 hover:shadow-md @if(request()->getRequestUri() === "/admin/orders")
-                    bg-gray-200 shadow-md @endif" id="orders-btn">
-                    <i class="fas fa-list-alt inline-block w-12 text-lg"></i><span
-                        class="ml-4 text-lg tracking-wider font-thin">Orders</span></div>
-            </a>
+            <div>
+                <a href="{{ route('admin.users') }}">
+                    <div class="flex items-center h-10 text-gray-900 p-2 hover:bg-gray-200 hover:shadow-md @if(request()->getRequestUri() === "/admin/users")
+                        bg-gray-200 shadow-md @endif" id="users-btn">
+                        <i class="fas fa-users inline-block text-lg w-12"></i><span
+                            class="ml-4 text-lg tracking-wider font-thin">Users</span></div>
+                </a>
+            </div>
+            <div>
+                <a href="{{ route('admin.products') }}">
+                    <div class="flex items-center hover:bg-gray-200 hover:shadow-md h-10 text-gray-900 p-2 @if(request()->getRequestUri() === "/admin/products"  || request()->getRequestUri() === "/admin/categories")
+                        bg-gray-200 shadow-md @endif" id="products-btn"><i
+                            class="fas fa-tshirt inline-block text-lg w-12"></i><span
+                            class="ml-4 text-lg tracking-wider font-thin">Products</span></div>
+                </a>
+                @if(request()->getRequestUri() === "/admin/products" || request()->getRequestUri() === "/admin/categories")
+                <a href="{{ route('admin.categories') }}">
+                    <div class="flex justify-center items-center bg-gray-300 h-8 text-gray-900 p-2 shift" id="products-btn"><i class="fas fa-tag inline-block text-lg w-12"></i><span
+                            class="ml-4 text-lg tracking-wider font-thin">Categories</span></div>
+                </a>
+                @endif
+            </div>
+            <div>
+                <a href="/admin/orders">
+                    <div class="flex items-center hover:bg-gray-200 h-10 text-gray-900 p-2 hover:shadow-md @if(request()->getRequestUri() === "/admin/orders")
+                        bg-gray-200 shadow-md @endif" id="orders-btn">
+                        <i class="fas fa-list-alt inline-block w-12 text-lg"></i><span
+                            class="ml-4 text-lg tracking-wider font-thin">Orders</span></div>
+                </a>
+            </div>
         </aside>
         <!-- Main Nav End -->
 

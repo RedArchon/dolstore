@@ -45,13 +45,17 @@ Route::delete('/products/{product}', 'ProductsController@destroy');
 */
 Auth::routes();
 Route::middleware('can:access admin')->group(function () {
+    Route::get('/admin', 'WebController@admin');
+
     Route::get('/admin/products', 'ProductsController@admin')->name('admin.products');
     Route::get('/admin/products/create', 'ProductsController@create')->name('products.create');
     Route::post('admin/products', 'ProductsController@store');
     Route::get('/admin/products/{product}/edit', 'ProductsController@edit')->name('products.edit');
+
     Route::get('/admin/users', 'UsersController@index')->name('admin.users');
     Route::get('/admin/users/create', 'UsersController@create');
     Route::post('admin/users', 'UsersController@store');
     Route::get('/admin/users/{user}/edit', 'UsersController@edit')->name('users.edit');
-    Route::get('/admin', 'WebController@admin');
+
+    Route::get('/admin/categories', 'CategoriesController@index')->name('admin.categories');
 });

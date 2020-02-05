@@ -11785,6 +11785,16 @@ th {
           transform: scale(1.02);
 }
 
+.shift {
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+}
+
+.shift:hover {
+  -webkit-transform: translateX(-3px);
+          transform: translateX(-3px);
+}
+
 @media (min-width: 640px){
   .sm\:sr-only{
     position: absolute;

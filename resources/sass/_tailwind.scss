@@ -126,3 +126,9 @@ th {
 .grow:hover {
     transform: scale(1.02);
 }
+.shift {
+    transition: 0.2s all;
+}
+.shift:hover {
+    transform: translateX(-3px);
+}
