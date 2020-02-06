@@ -101,72 +101,80 @@
     <div>
 
         @yield('content')
-
-        <footer class="sm:overflow-hidden sm:flex items-center justify-center gradient">
-            <div class="container p-8 sm:my-16">
-                <div class="sm:flex mb-4">
-                    <div class="sm:w-1/4 h-auto">
-                        <div class="text-orange-500 mb-2">Information</div>
-                        <ul class="list-reset leading-normal">
-                            <li class="hover:text-orange-400 text-gray-100">One</li>
-                            <li class="hover:text-orange-400 text-gray-100">Two</li>
-                            <li class="hover:text-orange-400 text-gray-100">Three</li>
-                            <li class="hover:text-orange-400 text-gray-100">Four</li>
-                            <li class="hover:text-orange-400 text-gray-100">Five</li>
-                            <li class="hover:text-orange-400 text-gray-100">Six</li>
-                            <li class="hover:text-orange-400 text-gray-100">Seven</li>
-                            <li class="hover:text-orange-400 text-gray-100">Eight</li>
-                        </ul>
-                    </div>
-                    <div class="sm:w-1/4 h-auto sm:mt-0 mt-8">
-                        <div class="text-blue-600 mb-2">Blue</div>
-                        <ul class="list-reset leading-normal">
-                            <li class="hover:text-blue-600 text-gray-100">One</li>
-                            <li class="hover:text-blue-600 text-gray-100">Two</li>
-                            <li class="hover:text-blue-600 text-gray-100">Three</li>
-                        </ul>
-
-                        <div class="text-blue-300 mb-2 mt-4">Blue-light</div>
-                        <ul class="list-reset leading-normal">
-                            <li class="hover:text-blue-300 text-gray-100">One</li>
-                            <li class="hover:text-blue-300 text-gray-100">Two</li>
-                            <li class="hover:text-blue-300 text-gray-100">Three</li>
-                        </ul>
-                    </div>
-                    <div class="sm:w-1/4 h-auto sm:mt-0 mt-8">
-                        <div class="text-green-600 mb-2">Green-dark</div>
-                        <ul class="list-reset leading-normal">
-                            <li class="hover:text-green-600 text-gray-100">One</li>
-                            <li class="hover:text-green-600 text-gray-100">Two</li>
-                            <li class="hover:text-green-600 text-gray-100">Three</li>
-                        </ul>
-
-                        <div class="text-green-300 mb-2 mt-4">Green-light</div>
-                        <ul class="list-reset leading-normal">
-                            <li class="hover:text-green-300 text-gray-100">One</li>
-                            <li class="hover:text-green-300 text-gray-100">Two</li>
-                            <li class="hover:text-green-300 text-gray-100">Three</li>
-                        </ul>
-                    </div>
-                    <div class="sm:w-1/2 sm:mt-0 mt-8 h-auto">
-                        <div class="text-red-400 mb-2">Newsletter</div>
-                        <p class="text-gray-100 leading-normal">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi,
-                            consectetur.
-                        </p>
-                        <div class="mt-4 flex">
-                            <input type="text"
-                                class="p-2 border border-grey-light round text-grey-dark text-sm h-auto focus:outline-none"
-                                placeholder="Your email address" />
-                            <button class="bg-orange-400 text-white rounded-sm h-auto text-xs p-3">
-                                Subscribe
-                            </button>
+        <footer class="font-sans gradient text-white py-8 px-4">
+            <div class="mx-auto container overflow-hidden flex flex-col lg:flex-row justify-between">
+                <a href="/" class="block mr-4 w-1/2">
+                    <span class="text-2xl text-gray-100 font-semibold">DOL</span> <span
+                        class="text-2xl text-gray-100 font-thin">Logo Store</span>
+                </a>
+                <div class="w-1/2 flex text-sm mt-6 lg:mt-0">
+                    <ul class="text-gray-700 list-none p-0 font-thin flex flex-col text-left">
+                        <li class="inline-block py-2 px-3 text-white uppercase no-underline font-medium tracking-wide">
+                            Product</li>
+                        <li><a href="#"
+                                class="inline-block py-2 px-3 text-gray-500 hover:text-gray-500-light no-underline">Popular</a>
+                        </li>
+                        <li><a href="#"
+                                class="inline-block py-2 px-3 text-gray-500 hover:text-gray-500-light no-underline">Trending</a>
+                        </li>
+                        <li><a href="#"
+                                class="inline-block py-2 px-3 text-gray-500 hover:text-gray-500-light no-underline">Catalog</a>
+                        </li>
+                        <li><a href="#"
+                                class="inline-block py-2 px-3 text-gray-500 hover:text-gray-500-light no-underline">Features</a>
+                        </li>
+                    </ul>
+                    <ul class="text-gray-700 list-none p-0 font-thin flex flex-col text-left">
+                        <li class="inline-block py-2 px-3 text-white uppercase no-underline font-medium tracking-wide">
+                            Company</li>
+                        <li><a href="#"
+                                class="inline-block py-2 px-3 text-gray-500 hover:text-gray-500-light no-underline">Press
+                                Release</a>
+                        </li>
+                        <li><a href="#"
+                                class="inline-block py-2 px-3 text-gray-500 hover:text-gray-500-light no-underline">Mission</a>
+                        </li>
+                        <li><a href="#"
+                                class="inline-block py-2 px-3 text-gray-500 hover:text-gray-500-light no-underline">Strategy</a>
+                        </li>
+                        <li><a href="#"
+                                class="inline-block py-2 px-3 text-gray-500 hover:text-gray-500-light no-underline">Works</a>
+                        </li>
+                    </ul>
+                    <ul class="text-gray-700 list-none p-0 font-thin flex flex-col text-left">
+                        <li class="inline-block py-2 px-3 text-white uppercase no-underline font-medium tracking-wide">
+                            Info</li>
+                        <li><a href="#"
+                                class="inline-block py-2 px-3 text-gray-500 hover:text-gray-500-light no-underline">Support</a>
+                        </li>
+                        <li><a href="#"
+                                class="inline-block py-2 px-3 text-gray-500 hover:text-gray-500-light no-underline">Developers</a>
+                        </li>
+                        <li><a href="#"
+                                class="inline-block py-2 px-3 text-gray-500 hover:text-gray-500-light no-underline">Customer
+                                Services</a></li>
+                        <li><a href="#"
+                                class="inline-block py-2 px-3 text-gray-500 hover:text-gray-500-light no-underline">Started
+                                Guide</a>
+                        </li>
+                    </ul>
+                    <div class="text-gray-700 flex flex-col">
+                        <div class="inline-block py-2 px-3 text-white uppercase font-medium tracking-wide">Follow Us
+                        </div>
+                        <div class="flex pl-4 justify-start">
+                            <a class="block flex items-center text-white hover:text-gray-500 mr-6 no-underline"
+                                href="#"><i class="fab fa-github-alt"></i></a>
+                            <a class="block flex items-center text-white hover:text-gray-500 mr-6 no-underline"
+                                href="#"><i class="fab fa-slack"></i></a>
+                            <a class="block flex items-center text-white hover:text-gray-500 no-underline" href="#"><i
+                                    class="fab fa-twitter"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="text-center mt-16 text-gray-100">Designed and Coded with <span
-                        class="text-red-700">&#10084;</span> in Olympia, WA</div>
             </div>
+            <div class="pt-4 mt-4 text-gray-400 border-t border-gray-900 text-center"> ©2020 AIDE Association. All
+                rights
+                reserved.</div>
         </footer>
     </div>
     <script src="{{ asset('js/app.js') }}"></script>
