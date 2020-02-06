@@ -14,7 +14,10 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        return view('admin.categories.index');
+        $categories = Category::all();
+        return view('admin.categories.index', [
+            'categories' => $categories
+        ]);
     }
 
     /**
@@ -35,7 +38,11 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        return redirect('admin.categories.index');
+        Category::create(request()->validate([
+            'name' => ['required', 'min:4', 'unique:categories']
+        ]));
+
+        return redirect(route('admin.categories'));
     }
 
     /**
@@ -57,7 +64,9 @@ class CategoriesController extends Controller
      */
     public function edit(Category $category)
     {
-        return view('admin.categories.edit');
+        return view('admin.categories.edit', [
+            'category' => $category
+        ]);
     }
 
     /**
@@ -69,7 +78,11 @@ class CategoriesController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        return redirect('admin.categories.index');
+        $category->update(request()->validate([
+            'name' => ['required', 'min:4', 'unique:categories']
+        ]));
+
+        return redirect(route('admin.categories'));
     }
 
     /**
@@ -80,6 +93,8 @@ class CategoriesController extends Controller
      */
     public function destroy(Category $category)
     {
-        return redirect('admin.categories.index');
+        $category->delete();
+
+        return redirect(route('admin.categories'));
     }
 }

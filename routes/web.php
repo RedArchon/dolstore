@@ -35,8 +35,7 @@ Route::delete('/users/{user}', 'UsersController@destroy');
 */
 Route::get('/products', 'ProductsController@index');
 Route::get('/products/{product}', 'ProductsController@show')->name('products.show');
-Route::put('/products/{product}', 'ProductsController@update');
-Route::delete('/products/{product}', 'ProductsController@destroy');
+
 
 /*
 |-------------------------------------------------------------------------------
@@ -51,6 +50,8 @@ Route::middleware('can:access admin')->group(function () {
     Route::get('/admin/products/create', 'ProductsController@create')->name('products.create');
     Route::post('admin/products', 'ProductsController@store');
     Route::get('/admin/products/{product}/edit', 'ProductsController@edit')->name('products.edit');
+    Route::put('/products/{product}', 'ProductsController@update');
+    Route::delete('/products/{product}', 'ProductsController@destroy');
 
     Route::get('/admin/users', 'UsersController@index')->name('admin.users');
     Route::get('/admin/users/create', 'UsersController@create');
@@ -58,4 +59,9 @@ Route::middleware('can:access admin')->group(function () {
     Route::get('/admin/users/{user}/edit', 'UsersController@edit')->name('users.edit');
 
     Route::get('/admin/categories', 'CategoriesController@index')->name('admin.categories');
+    Route::get('/admin/categories/create', 'CategoriesController@create')->name('categories.create');
+    Route::post('admin/categories', 'CategoriesController@store')->name('categories.store');
+    Route::get('/admin/categories/{category}/edit', 'CategoriesController@edit')->name('categories.edit');
+    Route::delete('/categories/{category}', 'CategoriesController@destroy')->name('categories.delete');
+    Route::put('/categories/{category}', 'CategoriesController@update')->name('categories.update');
 });
