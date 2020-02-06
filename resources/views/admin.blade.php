@@ -11,10 +11,10 @@
     @yield('head')
 </head>
 
-<body class="container mx-auto shadow-xl">
+<body class="mx-auto shadow-xl">
 
     <!-- Top Navbar Start -->
-    <nav class="flex items-center justify-between rounded-t bg-gray-800 h-12 text-gray-100 p-4 sm:mt-4">
+    <nav class="flex items-center justify-between bg-gray-800 h-12 text-gray-100 p-4">
         <span class="inline-block align-middle"><i class="fas fa-store-alt"></i> DOL Store | Admin Panel</span>
         <div class="logout">
             <li class="flex mx-2 dropdown text-lg text-gray-100 font-thin">
@@ -46,14 +46,17 @@
             </div>
             <div>
                 <a href="{{ route('admin.products') }}">
-                    <div class="flex items-center hover:bg-gray-200 hover:shadow-md h-10 text-gray-900 p-2 @if(request()->getRequestUri() === "/admin/products"  || request()->getRequestUri() === "/admin/categories")
+                    <div class="flex items-center hover:bg-gray-200 hover:shadow-md h-10 text-gray-900 p-2 @if(request()->getRequestUri() === "/admin/products"
+                        || request()->getRequestUri() === "/admin/categories")
                         bg-gray-200 shadow-md @endif" id="products-btn"><i
                             class="fas fa-tshirt inline-block text-lg w-12"></i><span
                             class="ml-4 text-lg tracking-wider font-thin">Products</span></div>
                 </a>
-                @if(request()->getRequestUri() === "/admin/products" || request()->getRequestUri() === "/admin/categories")
+                @if(request()->getRequestUri() === "/admin/products" || request()->getRequestUri() ===
+                "/admin/categories")
                 <a href="{{ route('admin.categories') }}">
-                    <div class="flex justify-center items-center bg-gray-300 h-8 text-gray-900 p-2 shift" id="products-btn"><i class="fas fa-tag inline-block text-lg w-12"></i><span
+                    <div class="flex justify-center items-center bg-gray-300 h-8 text-gray-900 p-2 shift"
+                        id="products-btn"><i class="fas fa-tag inline-block text-lg w-12"></i><span
                             class="ml-4 text-lg tracking-wider font-thin">Categories</span></div>
                 </a>
                 @endif
@@ -70,7 +73,10 @@
         <!-- Main Nav End -->
 
         <!-- Main Body Start -->
-        @yield('content')
+        <div class="w-full" style="min-height: 90vh;">
+            @yield('content')
+        </div>
+
         <!-- Main Body End -->
 
     </main>

@@ -1,7 +1,7 @@
 @extends('admin')
 
 @section('content')
-<section class="bg-gray-200 w-3/4 p-4 min-h-full" id="users">
+<section class="bg-gray-200 w-full p-4 min-h-full" id="users">
     <header class="flex justify-between bg-gray-800 rounded-lg px-4 py-2"><span
             class="text-xl text-gray-100 font-thin tracking-wide">Users</span><a href="/admin/users/create"><button
                 class="btn-add-item text-gray-100 font-thin">Add User <i class="fas fa-plus"></i></button></a></header>

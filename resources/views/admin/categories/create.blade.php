@@ -2,7 +2,7 @@
 
 @section('content')
 <section class="m-auto w-full">
-    <form class="flex justify-center" action="{{ route('categories.store') }}" method="POST">
+    <form class="flex justify-center mt-10" action="{{ route('categories.store') }}" method="POST">
         @csrf
         <input
             class="appearance-none inline-block bg-gray-200 w-64 text-gray-700 @error('name') border border-red-500 @enderror rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"

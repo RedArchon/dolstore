@@ -11791,8 +11791,8 @@ th {
 }
 
 .shift:hover {
-  -webkit-transform: translateX(-3px);
-          transform: translateX(-3px);
+  -webkit-transform: translateX(5px);
+          transform: translateX(5px);
 }
 
 @media (min-width: 640px){
