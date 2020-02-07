@@ -21,27 +21,6 @@ class UsersController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return view('admin.users.create');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
      * Display the specified resource.
      *
      * @param  \App\User  $user
@@ -60,7 +39,61 @@ class UsersController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        return view('admin.users.edit', [
+            'user' => $user,
+            'states' => [
+                'Alabama',
+                'Alaska',
+                'Arizona',
+                'Arkansas',
+                'California',
+                'Colorado',
+                'Connecticut',
+                'Delaware',
+                'Florida',
+                'Georgia',
+                'Hawaii',
+                'Idaho',
+                'Illinois',
+                'Indiana',
+                'Iowa',
+                'Kansas',
+                'Kentucky',
+                'Lousiana',
+                'Maine',
+                'Maryland',
+                'Massachusetts',
+                'Michigan',
+                'Minnesota',
+                'Mississippi',
+                'Missouri',
+                'Montana',
+                'Nebraska',
+                'Nevada',
+                'New Hamshire',
+                'New Jersey',
+                'New Mexico',
+                'New York',
+                'North Carolina',
+                'North Dakota',
+                'Ohio',
+                'Oklahoma',
+                'Oregon',
+                'Pennsylvania',
+                'Rhode Island',
+                'South Carolina',
+                'South Dakota',
+                'Tennessee',
+                'Texas',
+                'Utah',
+                'Vermont',
+                'Virginia',
+                'Washington',
+                'West Virginia',
+                'Wisconsin',
+                'Wyoming'
+            ]
+        ]);
     }
 
     /**
@@ -72,7 +105,17 @@ class UsersController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $user->update(request()->validate([
+            'name' => ['required', 'min:4'],
+            'email' => ['required', 'min:5'],
+            'address' => ['required', 'min:3'],
+            'city' => ['required', 'min:3'],
+            'state' => ['required', 'min:3'],
+            'zip' => ['required', 'min:5'],
+            'mailstop' => ['required', 'min:5'],
+            'dol_employee' => ['required']
+        ]));
+        return redirect(route('admin.users'));
     }
 
     /**

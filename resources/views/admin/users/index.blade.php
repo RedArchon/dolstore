@@ -3,8 +3,7 @@
 @section('content')
 <section class="bg-gray-200 w-full p-4 min-h-full" id="users">
     <header class="flex justify-between bg-gray-800 rounded-lg px-4 py-2"><span
-            class="text-xl text-gray-100 font-thin tracking-wide">Users</span><a href="/admin/users/create"><button
-                class="btn-add-item text-gray-100 font-thin">Add User <i class="fas fa-plus"></i></button></a></header>
+            class="text-xl text-gray-100 font-thin tracking-wide">Users</span></header>
     <table class="mt-2 w-full">
         <thead class="border-b-2 text-lg">
             <tr>

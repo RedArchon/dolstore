@@ -57,6 +57,7 @@ Route::middleware('can:access admin')->group(function () {
     Route::get('/admin/users/create', 'UsersController@create');
     Route::post('admin/users', 'UsersController@store');
     Route::get('/admin/users/{user}/edit', 'UsersController@edit')->name('users.edit');
+    Route::put('/admin/users/{user}', 'UsersController@update')->name('users.update');
 
     Route::get('/admin/categories', 'CategoriesController@index')->name('admin.categories');
     Route::get('/admin/categories/create', 'CategoriesController@create')->name('categories.create');
