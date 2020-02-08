@@ -24,7 +24,7 @@
 <div class="flex mt-64 xl:mt-32 w-5/6 mx-auto" id="products">
 
     <!-- start product card container -->
-    <div class="flex flex-wrap justify-around w-full md:ml-10 relative">
+    <div class="flex flex-wrap justify-around w-full relative">
         @if($products)
         @foreach($products as $product)
         <!-- start product card -->
@@ -80,7 +80,7 @@
                 <div class="h-1 mx-auto bg-indigo-200 w-24 opacity-75 mt-4 rounded"></div>
 
                 <div class="max-w-full md:max-w-6xl mx-auto my-3 md:px-8">
-                    <div class="relative block flex flex-col md:flex-row items-center">
+                    <div class="relative block flex flex-col md:flex-row items-center justify-center">
                         <div
                             class="w-11/12 max-w-sm sm:w-3/5 lg:w-1/3 sm:my-5 my-8 relative z-0 rounded-lg shadow-lg md:-mr-4 h-50">
                             <div class="bg-white text-black rounded-lg shadow-inner shadow-lg overflow-hidden">
