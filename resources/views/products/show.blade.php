@@ -52,63 +52,43 @@
             </div>
         </div>
         <div class="flex pb-10">
+
+            <img id="prod-img" class="min-w-10 border border-red-600"
+                src="{{  asset('storage/' . $product->images[0]->path) }}" alt="">
+            <script>
+                // let path = '{{ $product->images[0]->path }}';
+                // path = path.split('/').pop();
+                // console.log();
+                // document.getElementById('prod-img').src = path;
+            </script>
             <div class="w-1/2">
                 {{-- image carousel / lightbox --}}
                 <div class="carousel relative min-h-full px-4">
                     <div class="carousel-inner relative overflow-hidden w-full">
+                        @foreach ($product->images as $image)
                         <!--Slide 1-->
-                        <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true"
-                            hidden="" checked="checked">
+                        <input class="carousel-open" type="radio" id="carousel-{{ $image->id }}" name="carousel"
+                            aria-hidden="true" hidden="" checked="checked">
                         <div class="carousel-item absolute opacity-0" style="height:50vh;">
                             <div class="block h-full w-full bg-indigo-500 text-white text-5xl text-center"
-                                style="background-image: url('https://picsum.photos/id/{{ rand(1,900) }}/500/500');background-size:cover;">
-                                Slide 1</div>
+                                style="background-image: url('{{ $image->path }}');background-size:cover;">
+                            </div>
                         </div>
                         <label for="carousel-3"
                             class="prev control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
                         <label for="carousel-2"
                             class="next control-1 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
 
-                        <!--Slide 2-->
-                        <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true"
-                            hidden="">
-                        <div class="carousel-item absolute opacity-0" style="height:50vh;">
-                            <div class="block h-full w-full bg-orange-500 text-white text-5xl text-center"
-                                style="background-image: url('https://picsum.photos/id/{{ rand(1,900) }}/500/500');background-size:cover;">
-                                Slide 2</div>
-                        </div>
-                        <label for="carousel-1"
-                            class="prev control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
-                        <label for="carousel-3"
-                            class="next control-2 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
-
-                        <!--Slide 3-->
-                        <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true"
-                            hidden="">
-                        <div class="carousel-item absolute opacity-0" style="height:50vh;">
-                            <div class="block h-full w-full bg-green-500 text-white text-5xl text-center"
-                                style="background-image: url('https://picsum.photos/id/{{ rand(1,900) }}/500/500');background-size:cover;">
-                                Slide 3</div>
-                        </div>
-                        <label for="carousel-2"
-                            class="prev control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
-                        <label for="carousel-1"
-                            class="next control-3 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
+                        @endforeach
 
                         <!-- Add additional indicators for each slide-->
                         <ol class="carousel-indicators">
+                            @foreach ($product->images as $image)
                             <li class="inline-block mr-3">
-                                <label for="carousel-1"
+                                <label for="carousel-{{ $image->id }}"
                                     class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700">•</label>
                             </li>
-                            <li class="inline-block mr-3">
-                                <label for="carousel-2"
-                                    class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700">•</label>
-                            </li>
-                            <li class="inline-block mr-3">
-                                <label for="carousel-3"
-                                    class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700">•</label>
-                            </li>
+                            @endforeach
                         </ol>
 
                     </div>
