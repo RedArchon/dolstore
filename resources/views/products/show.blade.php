@@ -52,26 +52,19 @@
             </div>
         </div>
         <div class="flex pb-10">
-
-            <img id="prod-img" class="min-w-10 border border-red-600"
-                src="{{  asset('storage/' . $product->images[0]->path) }}" alt="">
-            <script>
-                // let path = '{{ $product->images[0]->path }}';
-                // path = path.split('/').pop();
-                // console.log();
-                // document.getElementById('prod-img').src = path;
-            </script>
             <div class="w-1/2">
                 {{-- image carousel / lightbox --}}
                 <div class="carousel relative min-h-full px-4">
                     <div class="carousel-inner relative overflow-hidden w-full">
                         @foreach ($product->images as $image)
+                        <?php $key = 0; ?>
                         <!--Slide 1-->
                         <input class="carousel-open" type="radio" id="carousel-{{ $image->id }}" name="carousel"
                             aria-hidden="true" hidden="" checked="checked">
                         <div class="carousel-item absolute opacity-0" style="height:50vh;">
                             <div class="block h-full w-full bg-indigo-500 text-white text-5xl text-center"
-                                style="background-image: url('{{ $image->path }}');background-size:cover;">
+                                style="background-image: url('{{  asset('storage/' . explode("/", $image->path)[1]) }}');background-size:cover; background-position: center">
+                                <?php $key++; ?>
                             </div>
                         </div>
                         <label for="carousel-3"

@@ -55,7 +55,7 @@ class ProductsController extends Controller
         $images = $request->file('image');
         foreach ($images as $key => $image) {
             if ($request->file('image')[$key]->isValid()) {
-                $path = $request->image[$key]->store('products'); // from store/products
+                $path = $request->image[$key]->store('public'); // from store/products
                 Image::create([
                     'product_id' => $product->id,
                     'path' => $path
