@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="p-6 mx-auto w-1/2">
-    <form method="POST" action="/admin/products/" class="w-full max-w-lg">
+    <form method="POST" action="/admin/products/" class="w-full max-w-lg" enctype="multipart/form-data">
         @csrf
         <div class="flex flex-wrap -mx-3 mb-6">
             <div class="w-full px-3 mb-6 md:mb-0">
@@ -77,7 +77,7 @@
                 <div class="flex items-center">
                     <input
                         class="appearance-none inline w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                        type="file" name="image-file" accept="image/*">
+                        type="file" name="image[]" accept="image/*" multiple>
                 </div>
             </div>
         </div>

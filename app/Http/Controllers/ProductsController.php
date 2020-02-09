@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use App\Category;
+use App\Image;
 use Illuminate\Http\Request;
 
 class ProductsController extends Controller
@@ -47,10 +48,20 @@ class ProductsController extends Controller
             'name' => ['required', 'min:3'],
             'description' => ['required', 'min:5'],
             'price' => ['required'],
-            'published' => ['required'],
-            'image_uri' => ['unique:products']
+            'published' => ['required']
         ]));
         $product->categories()->attach(request()->categories);
+
+        $images = $request->file('image');
+        foreach ($images as $key => $image) {
+            if ($request->file('image')[$key]->isValid()) {
+                $path = $request->image[$key]->store('public'); // from store/products
+                Image::create([
+                    'product_id' => $product->id,
+                    'path' => $path
+                ]);
+            }
+        }
         return redirect('/admin/products');
     }
 
