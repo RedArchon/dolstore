@@ -57,14 +57,12 @@
                 <div class="carousel relative min-h-full px-4">
                     <div class="carousel-inner relative overflow-hidden w-full">
                         @foreach ($product->images as $image)
-                        <?php $key = 0; ?>
                         <!--Slide 1-->
                         <input class="carousel-open" type="radio" id="carousel-{{ $image->id }}" name="carousel"
                             aria-hidden="true" hidden="" checked="checked">
                         <div class="carousel-item absolute opacity-0" style="height:50vh;">
                             <div class="block h-full w-full bg-indigo-500 text-white text-5xl text-center"
                                 style="background-image: url('{{  asset('storage/' . explode("/", $image->path)[1]) }}');background-size:cover; background-position: center">
-                                <?php $key++; ?>
                             </div>
                         </div>
                         <label for="carousel-3"
