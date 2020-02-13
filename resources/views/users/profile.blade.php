@@ -8,7 +8,7 @@
 
     @section('content')
     <div class="p-6 mx-auto w-2/3">
-        <form method="POST" action="{{ route('users.update', $user->id)}}" class="w-full">
+        <form method="POST" action="{{ route('update_profile')}}" class="w-full">
             @csrf
             @method('PUT')
             <div class="flex flex-wrap -mx-3 mb-6">
@@ -120,6 +120,11 @@
                 </div>
             </div>
             <div class="flex flex-wrap justify-end my-2">
+                @if(session('message'))
+                <div>
+                    <span class="text-lg mr-6 text-green-500 italic">{{ session('message') }}</span>
+                </div>
+                @endif
                 <button class="py-2 px-4 bg-red-700 text-white font-thin tracking-wide leading-snug grow"
                     type="submit">Update</button>
             </div>

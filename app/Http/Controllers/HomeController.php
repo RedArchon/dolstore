@@ -35,4 +35,19 @@ class HomeController extends Controller
             'states' => config('app.us_states')
         ]);
     }
+    public function updateProfile()
+    {
+        $user = User::find(auth()->id());
+        $user->update(request()->validate([
+            'name' => ['required'],
+            'email' => ['required', 'email'],
+            'address' => ['required'],
+            'city' => ['required'],
+            'state' => ['required'],
+            'zip' => ['required'],
+            'mailstop' => ['required'],
+            'dol_employee' => ['required']
+        ]));
+        return redirect(route('profile'))->with('message', 'Profile updated sucessfully.');
+    }
 }

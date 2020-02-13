@@ -108,23 +108,23 @@
             <section class="bg-white py-4 font-sans">
                 <div class="container m-auto flex items-baseline justify-start border-b-2 border-gray-300 mb-10">
                     <a href="{{ route('profile') }}">
-                        <h2 class="text-base text-base font-bold tracking-wide uppercase border-b-2 hover:border-black @if(request()->getRequestUri() === "/profile")
-                            border-black @endif py-4 px-6">
+                        <h2 class="text-gray-700 font-bold tracking-wide uppercase border-b-2 hover:border-black @if(request()->getRequestUri() === "/profile")
+                            border-black text-base @endif py-4 px-6">
                             Profile</h2>
                     </a>
                     <a href="{{ route('home') }}">
-                        <h2
-                            class="text-gray-700 hover:text-base font-bold tracking-wide uppercase border-b-2 hover:border-black py-4 px-6 -mb-4">
+                        <h2 class="text-gray-700 hover:text-base font-bold tracking-wide uppercase border-b-2 hover:border-black @if(request()->getRequestUri() === "/home")
+                            border-black text-base @endif py-4 px-6 -mb-4">
                             Orders</h2>
                     </a>
                     <a href="{{ route('payment') }}">
-                        <h2
-                            class="text-gray-700 hover:text-base text-base font-bold tracking-wide uppercase border-b-2 hover:border-black py-4 px-6">
+                        <h2 class="text-gray-700 hover:text-base text-base font-bold tracking-wide uppercase border-b-2 hover:border-black @if(request()->getRequestUri() === "/payment")
+                            border-black text-base @endif py-4 px-6">
                             Payment</h2>
                     </a>
                     <a href="{{ route('subscriptions') }}">
-                        <h2
-                            class="text-gray-700 hover:text-base font-bold tracking-wide uppercase border-b-2 hover:border-black py-4 px-6">
+                        <h2 class="text-gray-700 hover:text-base font-bold tracking-wide uppercase border-b-2 hover:border-black @if(request()->getRequestUri() === "/subscriptions")
+                            border-black text-base @endif py-4 px-6">
                             Subscriptions</h2>
                     </a>
                 </div>
