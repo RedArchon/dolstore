@@ -49,7 +49,7 @@
                                 class="fas fa-shopping-cart"></i></a>
                         <a class="text-lg text-gray-100 mx-2 font-thin hover:underline" href="">Store</a>
                         <a class="text-lg text-gray-100 mx-2 font-thin hover:underline" href="">About</a>
-                        <a class="text-lg text-gray-100 mx-2 font-thin hover:underline" href="">Contact</a>
+                        <a class="text-lg text-gray-100 mx-2 font-thin hover:underline" href="">Contract</a>
                         <span class="mx-2 text-lg text-gray-100 mx-2 font-thin">|</span>
 
                         {{-- <a href="{{ route('login') }}"><button
@@ -97,11 +97,43 @@
             @yield('hero')
         </div>
     </header>
-
+    <div class="container mx-auto text-4xl font-thin text-gray-800 leading-tight mt-6">Dashboard</div>
+    @if (session('status'))
+    <div class="alert alert-success" role="alert">
+        {{ session('status') }}
+    </div>
+    @endif
     <div>
+        <div class="flex flex-col mt-2">
+            <section class="bg-white py-4 font-sans">
+                <div class="container m-auto flex items-baseline justify-start border-b-2 border-gray-300 mb-10">
+                    <a href="{{ route('profile') }}">
+                        <h2
+                            class="text-base text-base font-bold tracking-wide uppercase border-b-2 hover:border-black py-4 px-6">
+                            Profile</h2>
+                    </a>
+                    <a href="{{ route('home') }}">
+                        <h2
+                            class="text-gray-700 hover:text-base font-bold tracking-wide uppercase border-b-2 hover:border-black py-4 px-6 -mb-4">
+                            Orders</h2>
+                    </a>
+                    <a href="{{ route('payment') }}">
+                        <h2
+                            class="text-gray-700 hover:text-base text-base font-bold tracking-wide uppercase border-b-2 hover:border-black py-4 px-6">
+                            Payment</h2>
+                    </a>
+                    <a href="{{ route('subscriptions') }}">
+                        <h2
+                            class="text-gray-700 hover:text-base font-bold tracking-wide uppercase border-b-2 hover:border-black py-4 px-6">
+                            Subscriptions</h2>
+                    </a>
+                </div>
+            </section>
+        </div>
 
         @yield('content')
-        <footer class="font-sans gradient text-white py-8 px-4">
+
+        <footer class="w-full font-sans gradient text-white py-8 px-4">
             <div class="mx-auto container overflow-hidden flex flex-col lg:flex-row justify-between">
                 <a href="/" class="block mr-4 w-1/2">
                     <span class="text-2xl text-gray-100 font-semibold">DOL</span> <span

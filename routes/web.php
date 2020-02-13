@@ -11,6 +11,11 @@
 |
 */
 
+
+Route::get('/profile', 'HomeController@profile')->name('profile')->middleware('auth');
+Route::get('/payment', 'HomeController@payment')->name('payment')->middleware('auth');
+Route::get('/subscriptions', 'HomeController@subscriptions')->name('subscriptions')->middleware('auth');
+
 /*
 |--------------------------------------------------------------------------
 | WebController (for general top-level routes)
