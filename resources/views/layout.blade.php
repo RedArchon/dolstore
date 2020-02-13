@@ -49,7 +49,7 @@
                                 class="fas fa-shopping-cart"></i></a>
                         <a class="text-lg text-gray-100 mx-2 font-thin hover:underline" href="">Store</a>
                         <a class="text-lg text-gray-100 mx-2 font-thin hover:underline" href="">About</a>
-                        <a class="text-lg text-gray-100 mx-2 font-thin hover:underline" href="">Contract</a>
+                        <a class="text-lg text-gray-100 mx-2 font-thin hover:underline" href="">Contact</a>
                         <span class="mx-2 text-lg text-gray-100 mx-2 font-thin">|</span>
 
                         {{-- <a href="{{ route('login') }}"><button

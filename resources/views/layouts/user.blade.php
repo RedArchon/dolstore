@@ -49,7 +49,11 @@
                                 class="fas fa-shopping-cart"></i></a>
                         <a class="text-lg text-gray-100 mx-2 font-thin hover:underline" href="">Store</a>
                         <a class="text-lg text-gray-100 mx-2 font-thin hover:underline" href="">About</a>
+<<<<<<< HEAD
                         <a class="text-lg text-gray-100 mx-2 font-thin hover:underline" href="">Contact</a>
+=======
+                        <a class="text-lg text-gray-100 mx-2 font-thin hover:underline" href="">Contract</a>
+>>>>>>> views
                         <span class="mx-2 text-lg text-gray-100 mx-2 font-thin">|</span>
 
                         {{-- <a href="{{ route('login') }}"><button
@@ -109,7 +113,11 @@
                 <div class="container m-auto flex items-baseline justify-start border-b-2 border-gray-300 mb-10">
                     <a href="{{ route('profile') }}">
                         <h2
+<<<<<<< HEAD
                             class="text-base text-base font-bold tracking-wide uppercase border-b-2 hover:border-black @if() @endif py-4 px-6">
+=======
+                            class="text-base text-base font-bold tracking-wide uppercase border-b-2 hover:border-black py-4 px-6">
+>>>>>>> views
                             Profile</h2>
                     </a>
                     <a href="{{ route('home') }}">
