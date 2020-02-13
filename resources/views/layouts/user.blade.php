@@ -109,7 +109,7 @@
                 <div class="container m-auto flex items-baseline justify-start border-b-2 border-gray-300 mb-10">
                     <a href="{{ route('profile') }}">
                         <h2
-                            class="text-base text-base font-bold tracking-wide uppercase border-b-2 hover:border-black py-4 px-6">
+                            class="text-base text-base font-bold tracking-wide uppercase border-b-2 hover:border-black @if() @endif py-4 px-6">
                             Profile</h2>
                     </a>
                     <a href="{{ route('home') }}">
