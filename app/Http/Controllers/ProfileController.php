@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
+use App\Profile;
 use Illuminate\Http\Request;
 
-class DashboardController extends Controller
+class ProfileController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('home');
+        //
     }
 
     /**
@@ -41,10 +41,10 @@ class DashboardController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Profile  $profile
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Profile $profile)
     {
         //
     }
@@ -52,48 +52,33 @@ class DashboardController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @param  \App\Profile  $profile
+     * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit(Profile $profile)
     {
-            $user = auth()->user();
-            return view('users.profile', [
-                'user' => $user,
-                'states' => config('app.us_states')
-            ]);
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Profile  $profile
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request, Profile $profile)
     {
-        $user = User::find(auth()->id());
-        $user->update($request->validate([
-            'name' => ['required'],
-            'email' => ['required', 'email'],
-            'address' => ['required'],
-            'city' => ['required'],
-            'state' => ['required'],
-            'zip' => ['required'],
-            'mailstop' => ['required'],
-            'dol_employee' => ['required']
-        ]));
-        return redirect(route('profile'))->with('message', 'Profile updated sucessfully.');
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Profile  $profile
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Profile $profile)
     {
         //
     }

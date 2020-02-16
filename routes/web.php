@@ -10,12 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/home', 'DashboardController@index')->name('home');
+    Route::get('/profile', 'DashboardController@edit')->name('edit');
+    Route::get('/payment', 'PaymentController@index')->name('payment');
+    Route::get('/subscriptions', 'SubscriptionsController@index')->name('subscriptions');
+    Route::put('/profile', 'ProfileController@update')->name('profile.update');
+});
 
-
-Route::get('/profile', 'HomeController@profile')->name('profile')->middleware('auth');
-Route::get('/payment', 'HomeController@payment')->name('payment')->middleware('auth');
-Route::get('/subscriptions', 'HomeController@subscriptions')->name('subscriptions')->middleware('auth');
-Route::put('/profile', 'HomeController@updateProfile')->name('update_profile')->middleware('auth');
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +25,7 @@ Route::put('/profile', 'HomeController@updateProfile')->name('update_profile')->
 |--------------------------------------------------------------------------
 */
 Route::get('/', 'WebController@index');
-Route::get('/home', 'HomeController@index')->name('home');
+
 
 /*
 |--------------------------------------------------------------------------
