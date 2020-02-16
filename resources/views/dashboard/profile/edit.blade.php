@@ -8,7 +8,7 @@
 
     @section('content')
     <div class="p-6 mx-auto w-2/3">
-        <form method="POST" action="{{ route('update_profile')}}" class="w-full">
+        <form method="POST" action="{{ route('profile.update')}}" class="w-full">
             @csrf
             @method('PUT')
             <div class="flex flex-wrap -mx-3 mb-6">

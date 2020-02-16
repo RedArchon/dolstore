@@ -49,43 +49,6 @@ class DashboardController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function edit()
-    {
-            $user = auth()->user();
-            return view('users.profile', [
-                'user' => $user,
-                'states' => config('app.us_states')
-            ]);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request)
-    {
-        $user = User::find(auth()->id());
-        $user->update($request->validate([
-            'name' => ['required'],
-            'email' => ['required', 'email'],
-            'address' => ['required'],
-            'city' => ['required'],
-            'state' => ['required'],
-            'zip' => ['required'],
-            'mailstop' => ['required'],
-            'dol_employee' => ['required']
-        ]));
-        return redirect(route('profile'))->with('message', 'Profile updated sucessfully.');
-    }
 
     /**
      * Remove the specified resource from storage.

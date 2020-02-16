@@ -15,8 +15,8 @@ class UsersController extends Controller
     public function index()
     {
         $users = User::all();
-        return view('admin.users.index', [
-            'users' => $users
+        return view('admin.dashboard.index', [
+            'dashboard' => $users
         ]);
     }
 
@@ -39,7 +39,7 @@ class UsersController extends Controller
      */
     public function edit(User $user)
     {
-        return view('admin.users.edit', [
+        return view('admin.dashboard.edit', [
             'user' => $user,
             'states' => config('app.us_states')
         ]);
@@ -64,7 +64,7 @@ class UsersController extends Controller
             'mailstop' => ['required', 'min:5'],
             'dol_employee' => ['required']
         ]));
-        return redirect(route('admin.users'));
+        return redirect(route('admin.dashboard'));
     }
 
     /**

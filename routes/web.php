@@ -12,7 +12,7 @@
 */
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/home', 'DashboardController@index')->name('home');
-    Route::get('/profile', 'DashboardController@edit')->name('edit');
+    Route::get('/profile', 'ProfileController@edit')->name('profile.edit');
     Route::get('/payment', 'PaymentController@index')->name('payment');
     Route::get('/subscriptions', 'SubscriptionsController@index')->name('subscriptions');
     Route::put('/profile', 'ProfileController@update')->name('profile.update');
@@ -32,9 +32,9 @@ Route::get('/', 'WebController@index');
 | UsersController
 |--------------------------------------------------------------------------
 */
-Route::get('/users/{user}', 'UsersController@show');
-Route::put('/users/{user}', 'UsersController@update');
-Route::delete('/users/{user}', 'UsersController@destroy');
+Route::get('/dashboard/{user}', 'UsersController@show');
+Route::put('/dashboard/{user}', 'UsersController@update');
+Route::delete('/dashboard/{user}', 'UsersController@destroy');
 
 /*
 |--------------------------------------------------------------------------
@@ -61,11 +61,11 @@ Route::middleware('can:access admin')->group(function () {
     Route::put('/products/{product}', 'ProductsController@update');
     Route::delete('/products/{product}', 'ProductsController@destroy');
 
-    Route::get('/admin/users', 'UsersController@index')->name('admin.users');
-    Route::get('/admin/users/create', 'UsersController@create');
-    Route::post('admin/users', 'UsersController@store');
-    Route::get('/admin/users/{user}/edit', 'UsersController@edit')->name('users.edit');
-    Route::put('/admin/users/{user}', 'UsersController@update')->name('users.update');
+    Route::get('/admin/dashboard', 'UsersController@index')->name('admin.dashboard');
+    Route::get('/admin/dashboard/create', 'UsersController@create');
+    Route::post('admin/dashboard', 'UsersController@store');
+    Route::get('/admin/dashboard/{user}/edit', 'UsersController@edit')->name('dashboard.edit');
+    Route::put('/admin/dashboard/{user}', 'UsersController@update')->name('dashboard.update');
 
     Route::get('/admin/categories', 'CategoriesController@index')->name('admin.categories');
     Route::get('/admin/categories/create', 'CategoriesController@create')->name('categories.create');

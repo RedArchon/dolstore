@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="p-6 mx-auto w-2/3">
-    <form method="POST" action="{{ route('users.update', $user->id)}}" class="w-full">
+    <form method="POST" action="{{ route('dashboard.update', $user->id)}}" class="w-full">
         @csrf
         @method('PUT')
         <div class="flex flex-wrap -mx-3 mb-6">

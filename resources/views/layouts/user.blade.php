@@ -107,7 +107,7 @@
         <div class="flex flex-col mt-2">
             <section class="bg-white py-4 font-sans">
                 <div class="container m-auto flex items-baseline justify-start border-b-2 border-gray-300 mb-10">
-                    <a href="{{ route('profile') }}">
+                    <a href="{{ route('profile.edit') }}">
                         <h2 class="text-gray-700 font-bold tracking-wide uppercase border-b-2 hover:border-black @if(request()->getRequestUri() === "/profile")
                             border-black text-base @endif py-4 px-6">
                             Profile</h2>
