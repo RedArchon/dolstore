@@ -117,8 +117,8 @@
                             border-black text-base @endif py-4 px-6 -mb-4">
                             Orders</h2>
                     </a>
-                    <a href="{{ route('payment') }}">
-                        <h2 class="text-gray-700 hover:text-base text-base font-bold tracking-wide uppercase border-b-2 hover:border-black @if(request()->getRequestUri() === "/payment")
+                    <a href="{{ route('payments.create') }}">
+                        <h2 class="text-gray-700 hover:text-base text-base font-bold tracking-wide uppercase border-b-2 hover:border-black @if(request()->getRequestUri() === "/payments")
                             border-black text-base @endif py-4 px-6">
                             Payment</h2>
                     </a>

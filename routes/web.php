@@ -16,6 +16,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/payment', 'PaymentController@index')->name('payment');
     Route::get('/subscriptions', 'SubscriptionsController@index')->name('subscriptions');
     Route::put('/profile', 'ProfileController@update')->name('profile.update');
+    Route::get('/payments/create', 'PaymentController@create')->name('payments.create');
 });
 
 

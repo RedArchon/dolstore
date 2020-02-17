@@ -20,11 +20,15 @@ class PaymentController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function create()
     {
-        //
+        $user = auth()->user();
+        return view('payments.create', [
+            'intent' => $user->createSetupIntent(),
+            'user' => $user
+        ]);
     }
 
     /**
