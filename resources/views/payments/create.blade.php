@@ -3,47 +3,14 @@
 
 @section('content')
 
-    <style>
-        /**
- * The CSS shown here will not be introduced in the Quickstart guide, but shows
- * how you can use CSS to style your Element's container.
- */
-        .StripeElement {
-            box-sizing: border-box;
-
-            height: 40px;
-
-            padding: 10px 12px;
-
-            border: 1px solid transparent;
-            border-radius: 4px;
-            background-color: white;
-
-            box-shadow: 0 1px 3px 0 #e6ebf1;
-            -webkit-transition: box-shadow 150ms ease;
-            transition: box-shadow 150ms ease;
-        }
-
-        .StripeElement--focus {
-            box-shadow: 0 1px 3px 0 #cfd7df;
-        }
-
-        .StripeElement--invalid {
-            border-color: #fa755a;
-        }
-
-        .StripeElement--webkit-autofill {
-            background-color: #fefde5 !important;
-        }
-    </style>
 
 <div class="mx-auto w-1/4 text-center">
     <form action="/charge" method="post" id="payment-form">
         <div class="form-row">
-            <label for="card-element">
-                Credit or debit card
+            <label class="text-lg font-thin" for="card-element">
+                Add Credit or Debit Card
             </label>
-            <div id="card-element">
+            <div class="my-4" id="card-element">
                 <!-- A Stripe Element will be inserted here. -->
             </div>
 
@@ -51,13 +18,13 @@
             <div id="card-errors" role="alert"></div>
         </div>
 
-        <button class="py-2 px-4 gradient text-white font-semibold">Submit Payment</button>
+        <button class="py-2 px-4 gradient text-white font-semibold rounded my-6">Submit Payment</button>
     </form>
 </div>
     <script src="https://js.stripe.com/v3/"></script>
     <script>
         // Create a Stripe client.
-        var stripe = Stripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
+        var stripe = Stripe('pk_test_8OIRDWhEoMwAXWgItti47h5o00ohJnoL12');
 
         // Create an instance of Elements.
         var elements = stripe.elements();
