@@ -9,12 +9,15 @@ use Laravel\Cashier\Billable;
 
 class User extends Authenticatable
 {
+
+    protected $cart;
     use Notifiable, Billable;
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
+
     protected $fillable = [
         'name', 'email', 'password', 'address', 'city', 'state', 'zip', 'mailstop', 'dol_employee'
     ];
@@ -37,7 +40,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function cart() {
+    public function cart()
+    {
         return $this->hasOne(Cart::class);
     }
 }
