@@ -37,7 +37,7 @@
         <!-- Main Nav Start -->
         <aside class="bg-gray-400 w-1/4">
             <div>
-                <a href="{{ route('admin.dashboard') }}">
+                <a href="{{ route('admin.users') }}">
                     <div class="flex items-center h-10 text-gray-900 p-2 hover:bg-gray-200 hover:shadow-md @if(request()->getRequestUri() === "/admin/dashboard")
                         bg-gray-200 shadow-md @endif" id="users-btn">
                         <i class="fas fa-users inline-block text-lg w-12"></i><span

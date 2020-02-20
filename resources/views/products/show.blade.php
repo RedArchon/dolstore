@@ -87,8 +87,9 @@
                 </div>
                 <div class="w-1/2 bg-gray-200 p-4" style="height:700px">
                     {{-- info and cart controls --}}
-                    <form action="" method="POST">
+                    <form action="{{ route('cart.store') }}" method="POST">
                         @csrf
+                        <input type="hidden" name="product_id" value="{{ $product->id }}">
                         <h1 class="text-4xl" style="font-family: Nunito;font-weight:200;">{{ $product->name }}</h1>
                         <div class="flex justify-between text-gray-800">
                             <div>&#9733;&#9733;&#9733;&#9733;&#9733;</div>
@@ -100,18 +101,30 @@
                             <span class="text-gray-800 font-thin text-lg">Size</span>
                             <div class="flex flex-wrap justify-around p-2">
 
+                            @foreach(\App\Helper::sizes() as $size)
+                                <!-- begin size -->
+                                    <div class="pretty p-icon p-round -mx-2 p-smooth">
+                                        <input type="radio" name="size"/>
+                                        <div class="state p-danger">
+                                            <i class="icon mdi mdi-check"></i>
+                                            <label>{{ strtoupper($size) }}</label>
+                                        </div>
+                                    </div>
+                                    <!-- end size -->
+                                @endforeach
+
+
                             </div>
                             <div class="flex flex-col justify-between w-5/6 mx-auto mt-6">
                                 <label for="quantity">Quantity</label>
                                 <div class="flex">
                                     <select class="py-2 px-4 w-40" name="quantity">
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
+                                        @for ($i = 0; $i <= 20; $i++)
+                                            <option value="<?= $i; ?>"><?= $i; ?></option>
+                                        @endfor
                                     </select>
-                                    <button type="submit" class="bg-red-600 text-white px-4 py-2 w-full ml-4" type="submit">Add to
+                                    <button type="submit" class="bg-red-600 text-white px-4 py-2 w-full ml-4"
+                                            type="submit">Add to
                                         Cart
                                     </button>
                                 </div>

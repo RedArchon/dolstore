@@ -20,4 +20,9 @@ class Product extends Model
     {
         return $this->hasMany(Image::class);
     }
+
+    public function carts()
+    {
+        $this->belongsToMany(Cart::class)->withTimestamps();
+    }
 }

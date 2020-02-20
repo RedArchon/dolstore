@@ -24,7 +24,8 @@ class CartController extends Controller
      */
     public function create()
     {
-        //
+        $user = auth()->user();
+
     }
 
     /**
